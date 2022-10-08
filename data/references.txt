@@ -1,2 +1,0 @@
-Save model to a pickle located at `path`
-====SPLIT====
