@@ -1,0 +1,11 @@
+"""
+The ActWrapper.save_act function saves the ActWrapper object to a pickle file.
+The saved ActWrapper can be loaded by another script using the cloudpickle package,
+which is used for serializing objects in Python. The saved file is a zip archive containing
+the pickled ActWrapper and an auxiliary directory containing all of the necessary data files that were 
+used when initializing this object.
+
+:return: The path to the saved model
+:doc-author: Trelent
+"""
+====SPLIT====
