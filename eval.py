@@ -1,4 +1,5 @@
 from nltk.translate.bleu_score import sentence_bleu
+import statistics
 
 with open('data/references.txt') as f:
     data = f.read().split("====SPLIT====")
@@ -23,6 +24,8 @@ trelent_hypotheses = [
 
 trelent_bleu = 0
 codex_bleu = 0
+trelent_scores = []
+codex_scores = []
 for i in range(len(references)):
     trelent_score = sentence_bleu([references[i]], trelent_hypotheses[i])
     codex_score = sentence_bleu([references[i]], codex_hypotheses[i])
@@ -30,6 +33,10 @@ for i in range(len(references)):
         print(trelent_score, codex_score)
         trelent_bleu += trelent_score
         codex_bleu += codex_score
+        trelent_scores.append(trelent_score)
+        codex_scores.append(codex_score)
 
-print("Trelent BLEU: ", trelent_bleu / len(references))
-print("Codex BLEU: ", codex_bleu / len(references))
+print("Trelent avg: ", trelent_bleu / len(references))
+print("Trelent median: ", statistics.median(trelent_scores))
+print("Codex avg: ", codex_bleu / len(references))
+print("Codex median: ", statistics.median(codex_scores))

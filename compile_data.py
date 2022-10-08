@@ -1,10 +1,9 @@
 from datasets import load_dataset
 import openai
 import requests
-import time
 
 # Codex result
-codex_prompt = "{code}\n# What does the function above do?.\n\"\"\""
+codex_prompt = "{code}\n# What is this code used for?.\n\"\"\""
 def get_codex_completion(data_entry):
     snippet = data_entry["code"].replace(data_entry["docstring"], "")
     prompt = codex_prompt.format(code=snippet)
@@ -12,9 +11,9 @@ def get_codex_completion(data_entry):
     response = openai.Completion.create(
         engine="code-davinci-002",
         prompt=prompt,
-        temperature=0.0,
+        temperature=1.0,
         max_tokens=128,
-        top_p=0.0,
+        top_p=1.0,
         frequency_penalty=0.0,
         presence_penalty=0.0,
         stop=["\"\"\"", "\n\n", "#"],
@@ -46,7 +45,14 @@ def get_trelent_result(data_entry):
         json=body
     )
 
-    return response.json()["data"]["docstring"]
+    docstr = response.json()["data"]["docstring"]
+    # Remove docstring pre/suffix and the :return: line and below
+    docstr = docstr.replace("r\"\"\"", "").replace("\"\"\"", "")
+    idx = docstr.find(":return:")
+    if idx != -1:
+        docstr = docstr[:idx]
+
+    return docstr.strip()
 
 dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
 
@@ -54,13 +60,12 @@ validation_set = dataset["validation"]
 trelent_results = ""
 codex_results = ""
 references = ""
-i = 0
-while(i < 1000):
+i = 1
+while(i < 10):
     data_entry = validation_set[i]
     trelent_results += get_trelent_result(data_entry) + "\n====SPLIT====\n"
     codex_results += get_codex_completion(data_entry) + "\n====SPLIT====\n"
     references += data_entry["docstring"] + "\n====SPLIT====\n"
-    time.sleep(1)
     print("iter", i)
     i+=1
 
