@@ -1,0 +1,5675 @@
+
+from __future__ import absolute_import, division, print_function
+from gym.envs.classic_control.rendering import SimpleImageViewer
+ 
+from gym import spaces
+from gym.envs.registration import EnvSpec
+from gym.utils import EzPickle
+import gym.envs
+from typing import Any, Dict, List, Optional
+import numpy as np
+from stable_baselines import logger
+from stable_baselines.common import TensorboardWriter
+from stable_baselines.common.schedules import LinearSchedule, get_schedule_
+====SPLIT====
+
+inspired from https://gist.github.com/longoen/35dd434b2f6726238f4e2e8c4af57b1f
+
+====SPLIT====
+
+lam=0.9
+====SPLIT====
+
+seed = 1
+wrapper_kwargs = {'downscale':30, 'epsilon': 10E-3, 'humodel': Fraction(9, 12), 'pse():
+env_fns_000 = make_vec_env(env_id, env_type, 1, seed,
+                start_index=0, reward_scale=1.0, flatten_dict_observations=True,
+                wrapper_kwargs={'downscale':30, 'epsilon': 10E-3,
+                                'humodel': Fraction
+====SPLIT====
+
+if __name__ == "__main__":
+    flags = tf.app.flags
+    flags.DEFINE_string('value', None, 'description')
+    flags.DEFINE_string('other_value', None, 'description')
+====SPLIT====
+try:
+    os.environ['PMI_PORT'] = '4040'
+    os.environ['PMI_ID'] = '0'
+    os.environ['MPI_PORT'] = '4039'
+    os.environ['MPI_ID'] = '0'
+    
+====SPLIT====
+Returns (time and reward history, last sample info).
+====SPLIT====
+
+class FrameStack(gym.Wrapper):
+    def __init__(self, env, k):
+        
+====SPLIT====
+def observation_placeholder(ob_space, batch_size=None, name='Ob'):
+    if batch_size is None:
+        placeholder = placeholders.obs_ph(name=name)
+    else:
+        placeholder = placeholders.obs_ph(name=name, batchsize=batch_size)
+    return placeholder
+====SPLIT====
+
+def build_q_net(obss, num_actions, reuse=None):
+    num_outputs = num_actions
+    with tf.variable_scope("model"):
+        x = encode_observation(obss['state'], obss['state_ph']) 
+====SPLIT====
+
+import pickle
+====SPLIT====
+
+Calling `get_session()` will return the same TensorFlow session across cou0ntless tf calls in
+different agents. That is, the DDPG object will initialize once and then everytime we need to 
+compute gradients and updates, we will reuse the same session, so instead of creating a new 
+computation graph, we will add new ops to the existing graph (or exising ops), which is 
+faster than creating a new computation graph *everytime the agent takes a step*.
+
+====SPLIT====
+
+************************************************************************
+* file containing AWiFS spectra (AWiFS_spec)
+************************************************************************
+* list containing AWiFS angles (AWiFS_list)
+************************************************************************
+* angle in AWiFS given (given_angle):   angle can be: VZA , SZA , RAA *       either from decobs file or from geometry file  *
+************************************************************************
+* file containing MODIS spectra (modpath)
+* this is 400X1 vector of wavelength, count is 200X2 with one header row
+************************************************************************
+* number of land use
+====SPLIT====
+
+====SPLIT====
+
+get_space_info(
+    {"obs_model": obs_space_info(model.observation_space),
+     "obs_hyper": tuple(),
+     "ids": 1})
+====SPLIT====
+
+Wrappers for Atari preprocessing.
+    Atari frames:
+    
+====SPLIT====
+def value(self, t):
+        
+====SPLIT====
+
+pass
+====SPLIT====
+
+https://stackoverflow.com/questions/4984647/accessing-dict-keys-like-an-attribute-in-python
+
+====SPLIT====
+
+The code presented is used to reshape an array in such a way, 
+that an numpy array of n dimensions becomes a numpy array of n-1 dimensions. 
+In other words, it takes the shape of an n-D array and gives us 
+the shape of an n-1-D array.
+====SPLIT====
+
+This code is mostly used for input, like money and stuff usally.
+
+====SPLIT====
+
+Source: https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/extract_features.py 
+====SPLIT====
+
+class Moviewrap(gym.Wrapper):
+    
+====SPLIT====
+
+Talk about this if you wanna create a restore checkpoint function later
+====SPLIT====
+
+class EpisodeStatistics(object):
+    def __init__(self, cum_reward, length):
+        self.cumulative_reward = cum_reward
+        self.length = length
+====SPLIT====
+
+Prioritize the parameters when creating a class.
+This helps the editor to peproach, and furthermore the Linter to resolve all give parameters.
+Example:
+********
+When I create a class in Pycharm with 2 parameters, like "total" and "number". When I give the values it shows me the 
+parameters like "number" is '0' and "total" is '1 or 2'. Next it helps that defined values are always prioritized. 
+In fact this makes a class creation 'faster'.
+
+====SPLIT====
+
+def batched_weighted_sum(weights, vecs, batch_size):
+    vecs_per_batch = tf.shape(vecs)[1]
+    n_vec = tf.shape(vecs)[0]
+    n_weights_per_vec = tf.shape(weights)[1]
+    n_batch = n_weights_per_vec / vecs_per_batch
+    weights = tf.reshape(weights, [n_vec, n_batch, vecs_per_batch])
+    ret = tf.reduce_sum(
+====SPLIT====
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+====SPLIT====
+
+>>>> Added by crz
+
+====SPLIT====
+def get_session(gpu_fraction=0.05):
+    print("gpu")
+    gpu_options = tf.ConfigProto(per_process_gpu_memory_fraction=gpu_fraction)
+    return tf.Session(config=gpu_options)
+====SPLIT====
+Trains an agent with (stochastic) Policy Gradients on Pong.
+Run on CPU (see also dqn.py).
+====SPLIT====
+
+기본적으로, 네트웍 별로 아래에서 적어놓은 네트워크 Graphs가 형성됩니다.
+test_net = tf.Graph()
+train_net = tf.Graph()
+====SPLIT====
+
+        if human_wants_reset:
+            ob = self.env.reset()
+            self._maybe_render_onscreen()
+        return np.array(ob).copy()
+    
+====SPLIT====
+
+tree =  {
+    'left': {
+        'left': {
+            'left': 1
+        },
+        'right': 2
+        },
+    'right': {
+        'right': 3
+        }
+        }
+
+====SPLIT====
+
+we need to use to convert (or not) from and to objects (Torch! in general).
+Will use __Keys__ for identifying the input and the output of our  class.
+    IoU: will use it when we want to compute the IoU of two torch Tensors.
+    IGNORE: Will Ignore them during the computation. Used for example for the Confidence and class id
+    Zone: Used here for getting the Zones Grid that we usually need for the IoU.
+__Get__ 
+
+====SPLIT====
+
+try:
+    from mpi4py import MPI
+    from maml_mpi import proc_id, num_procs
+    from neuron import h
+====SPLIT====
+
+class EvalSpec:
+    def __init__(self, hooks, estimators, max_steps):
+        self.hooks = hooks
+        self.estimators = estimators
+        self.max_steps = max_steps
+====SPLIT====
+
+    if rank != 0:
+        model_path = os.path.join(job_dir, 'model', 'model.hdf5')
+        if not os.path.exists(model_path):
+            if localrank == 0:
+                if setting.init_model_from_another is not None:
+                    if not os.path.exists(os.path.join(job_dir, 'model')):
+                        os.makedirs(os.path.join(job_dir, 'model'), exist_ok=True)
+                    os.
+====SPLIT====
+J(): what is this used for? I got an attribute error when run this line this morning.
+
+====SPLIT====
+
+def explained_variance_1d(ypred,y):
+    assert y.ndim == 1 and ypred.ndim == 1    
+    vary = np.var(y)
+    return np.nan if vary==0 else 1 - np.var(y-ypred)/vary
+
+====SPLIT====
+    
+    def _sample_proportional(self, batch_size):
+        res = []
+        for _ in range(batch_size):
+            
+====SPLIT====
+
+====SPLIT====
+
+env_id = code.CODE
+value_type='discrete' 
+====SPLIT====
+
+
+====SPLIT====
+
+Default word tokens.
+
+====SPLIT====
+
+Load word patterns and all word embeddings.
+Find the closest vectors for each word in the patterns.
+Find the closest languages for each pattern, using the mean of the closest vectors.
+Average the result to get the final answer.
+Output it.
+
+====SPLIT====
+
+points = []
+for coord in self.exterior.coords:
+        points.append( {'x': coord[0], 'y': coord[1] } )
+        if len(self.interiors) > 0
+                n = len(points) - 1
+                for i in range(1, len(self.interiors) + 1):
+                        xy = []
+                        for c in self.interiors[i - 1].coords:
+                                xy.append( {'x': c[0], 'y': c[1] } )
+====SPLIT====
+
+route = myrattlroute(self.canvas)
+route.pack(expand=1, fill=BOTH)
+
+====SPLIT====
+
+Understood.
+Got a 2D image. Expected 'color' to be a single number, 
+but got (255, 255, 255).
+====SPLIT====
+
+    def get_similar_points_gabor(filter_size, sigma, angles, freq):
+        points = []
+        for i_angle in range(len(angles)):
+            points.append([[x, y] for x in range(g_pheight) for y in range(g_pwidth)])
+        return points
+
+====SPLIT====
+
+  File "/home/cjjia/installFitting/Inference/src/Modules/Module.py", line 2
+====SPLIT====
+
+There are 3 preloaded methods. These are the python scripts we imported.
+In order to use cv2(OpenCv library) in Visual Studio Code, you need to place
+the following:
+>>> pkg-config --cflags --libs opencv
+
+====SPLIT====
+
+    def nn_augment_segmentation(self, segmentation):
+        seg_shape = (segmentation.shape[0], segmentation.shape[1], 1)
+        image = rendering.fill_segmentation(seg_shape, segmentation)
+        image = np.stack((image,)*3, 2)
+        self.on(image)
+        proj_segmentation = np.zeros(self.shape)
+        seg_coordinates = np.zeros(self.keypoints.shape)
+        seg
+====SPLIT====
+
+By default meta information for segmentation (e.g. vector color, usage etc.) is
+not included. Images can be loaded in the format where the meta information is
+included (if available for the given image). However, it is currently not
+possible to add meta information to RLE encoded masks.
+====SPLIT====
+
+    def display(self):
+        fig, ax = plt.subplots()
+        ax.imshow(self.image, cmap='gray')
+        if self.tight:
+            plt.tight_layout()
+        if self.ncols:
+            nrows = int(np.ceil(len(self.keypoints) / self.ncols))
+        else:
+            nrows = 1
+        plt.gcf().set_size_inches(1. * self.ncols * self.keypoint_width,
+
+====SPLIT====
+  
+    def transformed(self, keypoints):
+        return EMShape(
+            np.inner(keypoints, self.shape.reshape(-1)).reshape(-1, 2) +
+            keypoints[0])
+====SPLIT====
+
+    @classmethod
+    def generate(cls, size, min_keypoints, max_keypoints,
+                 min_keypoint_distance=10, return_list=False):
+        
+====SPLIT====
+
+=================================
+Having a segmented line in an image
+=================================
+====SPLIT====
+
+Normally we refer to "comments on the code to explain what the code does"
+as Documentation Strings or docstrings. These are a special type of comment
+that are between triple quotations. This is only for the documentation.
+
+====SPLIT====
+
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import cv2
+====SPLIT====
+
+import logging
+import revoscalepy
+import pandas
+import sys
+from PIL import Image
+from PIL import ImageOps
+import io
+import numpy as np
+====SPLIT====
+    
+ if __name__ == '__main__':
+    X = [1, 2, 3]
+    Y = [4, 5, 6]
+    min_class_size = 1000
+    
+    set_x = label_set(X, min_class_size)
+    set_y = label_set_2(Y, X)
+
+====SPLIT====
+            x1 = min(self.x1, self.x2)
+            x2 = max(self.x1, self.x2)
+            y1 = min(self.y1, self.y2)
+            y2 = max(self.y1, self.y2)
+            return x1 != x2 and y1 != y2
+====SPLIT====
+
+        
+====SPLIT====
+
+====SPLIT====
+
+def default_sub_polar_trans_gen():
+    gen = SampledPolygonTabular(
+        {"x_std": (1 / 16, 0.2), "x_var": (0.05 * 64 * 64, 0.2 * 64 * 64), "y_std": (1 / 16, 0.2), "y_var": (0.05 * 64 * 64, 0.2 * 64 * 64),
+         "x_mean": (0.5, 0.1), "y_mean": (0.5, 0.1)}
+====SPLIT====
+ -How it works? What is .load_img() function?
+====SPLIT====
+
+augseq = iaa.Sequential([Augmentation(color_value_or_threshold=[(0, 128)],
+                                     renormalize_value=True,
+                                     force_output_value=False)])
+aug = pixel_augmenter.get_ultimate_augmenter(augseq,
+                                             interpolation_order=Augmentation.INTERPOLATION_ORDER_AFFINE,
+                                             )
+augseq2 = iaa.Sequential([Augmentation(color_value_or_threshold=[(0, 128
+====SPLIT====
+
+b = BoundingBox(2, 3, 4, 5, "meaning")
+bb = b.copy()
+print(bb.x1)  
+====SPLIT====
+
+import random 
+import matplotlib.pyplot as plt 
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+
+====SPLIT====
+
+NB: We define the augumentation via a function object rather than callers of imgaug.isotropic() for several reasons:
+  (a) One function makes it easier to support matrices like the Emboss one above, where we cannot just set the diagonal.
+  (b) Parameters like porbability and radius are not available in `%timeit` cell magics.
+  (c) Results can be compared to results from callers, then.
+====SPLIT====
+
+alpha = alpha / 255.0
+====SPLIT====
+
+from scipy.ndimage.filters import convolve as sp_convolve
+from PIL import ImageFilter as PIL_convolve
+====SPLIT====
+
+def _shapes_equal(shape1, shape2):
+    shape1 = normalize_shape(shape1)
+    shape2 = normalize_shape(shape2)
+====SPLIT====
+
+all bind getters and setters if the config binds them.
+
+====SPLIT====
+
+def AdditivePoissonNoise(data=None):
+    '''
+    Poisson distribution random noise
+====SPLIT====
+
+import numpy as np
+====SPLIT====
+
+====SPLIT====
+
+%%capture
+
+====SPLIT====
+def AddToHueAndSaturation(value=0, from_colorspace="RGB", name=None, deterministic=False, random_state=None):
+    if name is None:
+        name = "Unnamed%s" % (ia.caller_name(),)
+====SPLIT====
+
+pepper = EpochAggregator("Pepper")
+seq = iaa.Sequential([
+    iaa.Add(0),
+    pepper,
+    iaa.Fliplr(0.5),
+    pepper,
+    iaa.Flipud(0.5),
+    pepper,
+    iaa.Dropout(0),
+    pepper,
+    iaa.CoarseDropout(0, size_percent=0.5),
+    pepper
+])
+====SPLIT====
+
+class _CoarseSalt(meta.Augmenter):
+    def __init__(self, p=0, size_px=None, size_percent=None, per_channel=False, min_size=4,
+                 name=None, deterministic=False, random_state=None):
+        super(_CoarseSalt, self).__init__(name=name, deterministic=deterministic, random_state=random_state)
+====SPLIT====
+
+image_warp = transform_matrix_offset_center(image, y, x)
+====SPLIT====
+
+The current year and the ancient year, city of math.
+http://www.csie.ntut.edu.tw/~b97076/activities/math_2013winter24.pdf
+p.4
+
+====SPLIT====
+
+
+====SPLIT====
+
+    def createFromOpenMMSystem(self, openmm_system, copy_forces = True):
+        'Convert an OpenMM System to a MDTraj Topology in-place.  If copy_forces is False, the
+        forces will be set to None'
+        if self.n_atoms == 0: raise ValueError('This topology has already been initialized!')
+        
+        import _py_openmm_Topology as _cT
+        _cT.createFromOpenMMSystem(self._topology, openmm_system)
+        if not
+====SPLIT====
+Generates a 2D grid of PSD for calibration messages.
+====SPLIT====
+
+EIGENVALUE DECOMPOSITION
+
+====SPLIT====
+
+The eval-metric is a crucial part of any machine learning
+====SPLIT====
+
+def face_to_label(image, label):
+    shape = list(image.shape)
+    return [[
+        max(label[0] / shape[0], 0.0),
+        max(label[1] / shape[1], 0.0),
+        min((label[0]+label[2]) / shape[0], 1.0),
+        min((label[1]+label[3]) / shape[1], 1.0)
+    ]]
+
+====SPLIT====
+
+def pad_arrays_to_same_shape(arrays, pad_mode="constant", pad_cval=0,
+                        dtype=None, data_format=None):
+    
+====SPLIT====
+
+This function has been called from very few functions. We may need to
+drop this one as well.
+====SPLIT====
+
+if __name__ == "__main__":
+    size = None  
+====SPLIT====
+
+QUOKKA_LABELLING_CACHE = {}
+def get_quokka_labeling(extract=None):
+    if extract is notNone:
+        extract = _quokka_normalize_extract(extract)
+    if extract not in QUOKKA_LABELING_CACHE:
+        clahess = quokka_segmentation_clahe(size=(800, 600), extract=extract)
+        labellingsm = np.unique(quokka_scaled.flatten()).tolist()
+====SPLIT====
+
+import imgaug as ia
+from imgaug import augmenters as iaa
+from imgaug.augmentables.bbs import BoundingBoxesOnImage
+import json
+import os
+====SPLIT====
+
+''
+====SPLIT====
+
+def cluster_by_angle(poses):
+    pose_fingerprints = []
+    for pose in poses:
+        pose_fingerprints.append(pose_fingerprint(pose))
+    
+    pose_clusters = []
+    while len(pose_fingerprints) > 0:
+        pose_fingerprint = pose_fingerprints.pop(0)
+        pose_cluster = [pose_fingerprint]
+====SPLIT====
+
+Author: Raymond Ho, Arno Oosterhuis
+====SPLIT====
+def draw_image_non_normalized(
+    image,
+    boxes,  
+====SPLIT====
+def crop(image, offsets, target_size):
+    
+    
+   
+    height, width = image.shape[:2]
+    x_left, y_top = offsets
+    w = min(int(target_size[0]), width-x_left)
+    h = min(int(target_size[1]), height-y_top)
+    return image[y_top:y_top+h, x_left:x_left+w, ...]
+====SPLIT====
+
+import numpy as np
+import matplotlib.pyplot as plt
+====SPLIT====
+
+    Code used to test and debug.
+    Not actually used in this project.
+
+====SPLIT====
+
+import numpy as np
+====SPLIT====
+
+
+====SPLIT====
+
+def max_pool(arr, block_size, cval=0, preserve_dtype=True):
+    return pool(arr, block_size, np.max, cval=cval, preserve_dtype=preserve_dtype)
+
+====SPLIT====
+
+====SPLIT====
+
+    It is used to display multiple ima
+====SPLIT====
+
+from __future__ import print_function, division, absolute_import
+from ... import imgaug as ia
+import numpy as np
+from PIL import Image
+from ... import imgaug as ia
+from ... import parameters as iap
+from ... import augmenters as iaa
+====SPLIT====
+
+try:
+    import cgi
+except ImportError:
+    def _parse_qhz_headers(fp):
+        compute = {}
+        for line in fp:
+            if line.startwith('Cpu0' , line.startwith('Processor'):
+                vals = line.split(':')
+                key = vals[0].strip()
+                val = vals[1].strip()
+            elif line.find('=') >= 0:
+                vals = line.split('=', 1)
+                key = vals[0
+====SPLIT====
+
+====SPLIT====
+def background(mask):
+     Shape and Params
+    
+====SPLIT====
+
+def _Storage_swap_status(before):
+    if isinstance(before._storage, list):
+        status = None if before.storage_status is None else before.storage_status[:]
+====SPLIT====
+
+    param _paramspecs: (at least one of): 
+        - list of parameter specifications, where each one can be:
+            - (str or unicode label, TypeSpec ispec)    
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+def _handle_batch_ids_gen(self, batch_ids):
+    while True:
+        try:
+            batch_id = batch_ids.next()
+        except StopIteration:
+            break
+        try:
+            yield batch_id
+        except:
+            return
+
+====SPLIT====
+
+argconvert = PathConverter(
+{
+    "format": "@YAML",
+},
+)
+args = argconvert('example_data/testData.yml')
+
+====SPLIT====
+
+def join_local_device_pairs(items):
+    
+====SPLIT====
+
+    def gather_evidence(model, minibatches, generator):
+        evidence = {}
+        for k in generator.tree_extractors:
+            evidence[k] = []
+====SPLIT====
+
+
+====SPLIT====
+class Worker(multiprocessing.Process):
+    
+====SPLIT====
+
+def create_resized_anchor_images(image, anchor_idxs, sizes, interpolation):
+    removed_axes = [ax for ax in range(image.ndim) for size in sizes if
+                    image.shape[ax] < size and ax not in (0, 1)]
+====SPLIT====
+
+def Negative(other_param):
+    return ForceSign(other_param=other_param, reverse_sign=False)
+====SPLIT====
+
+Hi Palenthar.
+====SPLIT====
+
+        if isinstance(other, JHSegmentSet):
+            interior = list(self.exterior)
+            for s in other.segments:
+                self._find_path(s, interior)
+        
+====SPLIT====
+        
+z = zip(*ls1.coords)
+resample = LineString(ls1_mb.coords[0]).interpolate(5, normalized=True).simplify(1)
+r = [p.coords[0] for p in resample.difference(ls1)]
+wkt = LineString(r).wkt
+        z = polygonize(self.project(src_proj, trg_proj).interior[1].linestring)
+====SPLIT====
+
+for i in range(len(points[:,0])):
+    point = (xq[i] , yq[i])
+    point_index = Poly.find_closest_point_index(point)
+    distance_between_points = point_index[1]
+    min_index = point_index[0]
+    print(distance_between_points)
+    print(min_index)
+
+====SPLIT====
+
+poly = LineString([(1, 1), (1, 2), (2, 2), (2, 1)]).buffer(0.5, 1)
+tw = Image.new('L', (10, 10))
+tf = ImageDraw.Draw(tw)
+tf.polygon(list(poly.exterior.coords), 0)
+fig, ax = plt.subplots(1,1)
+Array(np.array(tw)).show_on_ax(ax)
+ax.set_xlim(0,10)
+ax.set_y
+====SPLIT====
+
+outer_box_extremes = list(itertools.product([True, False], repeat=4))
+for partly in [True, False]:
+    for outer_box_extreme in outer_box_extremes:
+        if not partly:
+            height, width = book_full_image.shape[0:2]
+            if *outer_box_extreme[:2]:
+                box.y1, box.y0 = 0, height // 2
+            if *outer_box_extreme[2:]:
+                box.x1, box.x
+====SPLIT====
+
+Polygon = Polygon
+====SPLIT====
+
+
+====SPLIT====
+
+Read and resize train images and masks
+====SPLIT====
+
+    
+====SPLIT====
+
+def is_fully_within_image(self, image):
+        
+====SPLIT====
+
+====SPLIT====
+
+def to_shapely_line_string(geometry, closed=False, interpolate=0):
+    
+====SPLIT====
+
+     @classmethod
+    def from_shape(cls, shape, label=None):
+        
+====SPLIT====
+
+class FpnLayerSimgleJoints(FpnLayerSimgle):
+    def __init__(self,int32=True):
+        super().__init__()
+        Mconv5_stage6_L2 = 152
+        Mconv6_stage6_L1 = 88
+        Mconv6_stage6 = 88
+        if int32:
+            Mconv5_stage6_L2 = 128
+            
+====SPLIT====
+
+    @property
+    def height(self):
+        return self._y2 - self._y1
+====SPLIT====
+
+for line_st, order_ve in zip(line_stops, line_order_houghLines):
+        line_st.append(
+            (order_ve - 0.5 * len(order_ve) + 0.5, 1).astype(np.int)
+        )
+        line_st.append(
+            (order_ve - 0.5 * len(order_ve) + 0.5, height - 1).astype(np.int)
+        )
+
+====SPLIT====
+
+def angle(p1, p2):
+    
+====SPLIT====
+ 
+{new_var_name} = {source_variable}.copy()
+{new_var_name}.set_label({new_label})
+{new_var_name}.set_exterior({new_exterior})
+
+====SPLIT====
+
+def facet_equivalent_triangular(pt, self=None):
+    
+====SPLIT====
+PolygonsOnImage = defAugmentables(
+    Polygon,
+    kw_funcname="PolygonsOnImage",
+    kw_varname="polys",
+    kw_retname="psoi",
+    kwargs_thru=[KeypointsOnImage],
+)
+====SPLIT====
+
+image = Image([[0,0],[1,1],[3,3]], dtype=np.int)
+rpnt = [3,3]
+
+====SPLIT====
+
+
+====SPLIT====
+When we work with an object, we must need some actions to be performed automatically. Like if we have a list object.
+While creating or adding items to the list, it can automatically sort all the existing items.
+This is the concept called DELEGATION in Python. 
+So this job is done by method-__getattr__(self, name).
+====SPLIT====
+
+A. It's a deprecated API shim.
+B. This is allowing dlib to use the API in place of the deep neural network we have been previously using.
+C. No idea, can't find anything about dlib.
+D. This is being used to return the dlib-underlying image data as a smaller shim to the other functions we have been using.
+
+====SPLIT====
+ code.interact(local=dict(globals(), **locals()))
+====SPLIT====
+
+    def to_coco(self):
+        all_coords = []
+        for sub_shape in self.polygons:
+            all_coords.extend(sub_shape.exterior)
+            for hole in sub_shape.interiors:
+                all_coords.extend(hole)
+        outer_coords = [[x,y] for (y,x) in all_coords[0::2]]
+        holes = all_coords[1::4]
+        hole_coords = [[x, y] for hole in
+====SPLIT====
+
+        {
+            Particles inside:    Listing:  
+            Particles outside:   Complement(above, below).
+            Particles below:     Listing:
+            Particles above:     Complement(below, above).
+        } 
+
+====SPLIT====
+return the smallest item of the tree
+====SPLIT====
+
+    if __name__ == "__main__":
+        import doctest
+        doctest.testmod()
+====SPLIT====
+
+class BZ2Dict(dict, object):
+    def __init__(self, path, readonly=False, compress=True):
+        
+====SPLIT====
+
+class TestSequenceFunctions(unittest.TestCase):
+====SPLIT====
+
+for i in range(-1, 4):
+    for j in range(-1, 4):
+        color = abs(simplex2d(generator,i/2,j/2))
+        screen.fill((color,color,color), pygame.Rect(w*i,h*j,w,h))
+pygame.display.flip()
+pygame.time.wait(3000)
+ 
+
+====SPLIT====
+ 
+====SPLIT====
+
+def ContrastNormalization(alpha=0, per_channel=False, name=None, deterministic=False, random_state=None):
+    if name is None:
+        name = "Unnamed%s" % (ia.caller_name(),)
+====SPLIT====
+
+Sample
+=======
+====SPLIT====
+Computationally more expensive to calculate p, because it needs to
+operate on NxN many points
+====SPLIT====
+
+====SPLIT====
+
+  
+    atom_space = AZSpace(tuple(zip(na_x, na_y, na_z)))
+     for j, group in enumerate(ar0cs.groups()):
+        at = group.atom
+        graph.add_vertex(at.name, group=j) 
+        gcoors = group.coords
+====SPLIT====
+
+
+====SPLIT====
+
+        
+====SPLIT====
+
+proj_mercator, proj_wgs84 = get_projections()
+geotweets_wgs84 = 
+
+====SPLIT====
+
+pola = tt.is_fully_within_image(img)
+pola.all()
+
+====SPLIT====
+img = imread('hor.bmp')
+mask = ia.SegmentationMapsOnImage(np.zeros_like(img[:,:,0]), shape=img.shape)
+mask = mask.draw_line((100,100), (200,100))
+mask = mask.draw_line((100,2), (200,2))
+mask = mask.draw_line((100,300), (200,300))
+mask = mask.draw_line((100,301), (200,301))
+print(mask.coords)
+draw = ia.Seg
+====SPLIT====
+
+    
+====SPLIT====
+
+from imgaug import augmenters as iaa
+====SPLIT====
+
+def add_obstacle_heatmaps(heatmaps,
+                          obstacles,
+                          arr=None,
+                          value=1.0,
+                          clip_obstacles_to_image=True):
+    
+    
+    
+    
+    
+    
+====SPLIT====
+
+if __name__ == '__main__':
+    def main():
+        import sys
+        import os.path
+        csv_path = sys.argv[1]
+        angles_data_dir = csv_path.replace('\\', '/').split('/')
+        angles_images_dir = angles_data_dir[:-2] + angle_images_dir
+        angles_images_dir = '/'.join(angles_images_dir)
+       
+====SPLIT====
+
+====SPLIT====
+Also Random Augmentation 3 is specifically used for augment_polygon . Check image segmentation notebook for more details
+====SPLIT====
+
+        ys = self.min_y + ys
+        ys = ys.astype(np.int32)
+
+====SPLIT====
+
+points = []
+====SPLIT====
+
+if __name__ == "__main__":
+    xyz = np.array([(1,0,2), (2,0,2), (2,0,4)])
+====SPLIT====
+
+def get_inertia_ellipse(points, mass=1):
+    d_x, d_y = _get_deminsions_inertia(points, mass=1)
+    ROT_MAT = _get_rotation_mat(points)
+    diameters = linalg.norm(_dot(ROT_MAT, np.ones((2, 2))), axis=0)
+    radii = diameters / 2
+    return Ellipse(edges=radii)
+
+====SPLIT====
+
+
+====SPLIT====
+
+class CostMatrix(np.ndarray):
+    def __new__(cls, *args, **kwargs):
+        from .aggregation import LAPJV
+====SPLIT====
+
+class LineString(LineString):
+        
+    
+====SPLIT====
+
+    class PolygonFeature(object):
+        
+====SPLIT====
+
+@code_deprecated("This code is planned to be deprecated in imgaug 0.3.0.",
+                 func_or_class=PolygonsOnImage, category='functionality_changed')
+def MultiPolygonsOnImage(image, polygons, shape=None):
+    
+====SPLIT====
+
+try:
+    from shapely.validation import is_ccw, is_simple
+====SPLIT====
+
+clear
+set terminal svg size 640,480 enhanced font "Helvetica,20"
+set output "test.svg"
+
+====SPLIT====
+
+                        It is used to copy the coordinates
+                        of the point and also label of point
+
+====SPLIT====
+
+class HooksImages(CocoDataset):
+    CLASSES = ['Alabama Crimson Tide','Arkansas Razorbacks',
+                         'Auburn Tigers','Florida Gators','Georgia Bulldogs',
+                     'Georgia Southern Eagles','Georgia State Panthers',
+                       'Kentucky Wildcats','LSU Tigers','Missouri Tigers',
+                   'South Carolina Gamecocks','Tennessee Volunteers',
+                   'Texas A&M Aggies','Vanderbilt Commodores']
+    IMAGES_PER_GPU = 2
+
+====SPLIT====
+
+    def cut_out_of_image(self):
+        lss = []
+        for ls in self.line_strings:
+            lss.extend(ls.cut_out_of_image(self.shape))
+        return LineStringsOnImage(lss, shape=self.shape)
+====SPLIT====
+
+import numpy as np
+import tensorflow as tf
+H = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+reshaped = tf.reshape(H, [12], name="reshaped")
+====SPLIT====
+
+    def _get_line_strings(self, shape_line, shape_image):
+        
+        ls = []
+        for x1, y1, x2, y2 in shape_line:
+            ls.append(LineStringOnImage([(int(x1*shape_image[1]), int(y1*shape_image[0])), (int(x2*shape_image[1]), int(y2*shape_image[0]))], shape=shape_image))
+        return ls
+====SPLIT====
+
+import cv2
+def f(img):
+    return cv2.addWeighted(img, 0.5, np.ones((650, 650, 3))*12, 0.5, 0)
+cv2.imwrite("pcv2_blend_basic.png", f(cv2.imread("images/ldr_pdx.png")))
+
+====SPLIT====
+
+
+====SPLIT====
+
+PM3: ["PLAIN", "EARS", "PAHS"]
+PLAIN: 
+PLAIN + EARS -> PLAIN (+ EARS if multiple EARS)
+0, 2:
+P 1: PM03
+PM0 + PLAIN -> PM0
+====SPLIT====
+
+from imgaug.augmentables.kps import Keypoint, KeypointsOnImage
+====SPLIT====
+
+def motion_blur(image, angle=(0, 360), direction=(-1.0, 1.0), order=1, mode="constant", cval=0.0, name="MotionBlur", deterministic=False):
+    matrix = get_motion_blur_matrix(image, angle=angle, direction=direction, order=order, ia=ia)
+    if mode not in _allowed_kernel_modes:
+        ia.warn("[%s] Improper mode selected. Valid options: %s. Falling back to constant." %
+====SPLIT====
+
+    sometimes = meta.Sometimes(0.5,
+                               iaa.Affine(
+                                   scale={"x": (0.001, 1), "y": (0.001, 1)},
+                                   translate_percent={"x": (-0.2, 0.2), "y": (-0.2, 0.2)},
+                                   rotate=(-45, 45),
+                                   shear=(-16, 16),
+                                   order=(1, 3),
+                                   cval=(0, 255),
+                                   mode=ia.ALL
+====SPLIT====
+
+def alpha_array(x1, y1, size_x, size_y, intensity_mean, intensity_stdDev, alpha_min, alpha_multiplier,
+                alpha_curve_distance_map, intensity_freq_exponent):
+    try:
+        import numexpr as ne
+    except ImportError:
+        import numpy as ne
+    r_min = (1-alpha_min)**(1/alpha_multiplier)
+    r = ne.evaluate("(1-alpha_curve_distance_map/size_x)**
+====SPLIT====
+A seemingly very simple snowflake generator.
+It follows a model that selects points randomly, seeded via a random point, on a circle
+around this point. Around this point a line segment is connected. Then a line around
+the first rpoint of 2 is connected. And so on. Snowflakes are generated as like this.
+
+====SPLIT====
+class MySegMap2D(SegmentationMapOnImage):
+====SPLIT====
+
+if __name__ == "__main__":
+    import sys
+    import os
+    import cv2
+====SPLIT====
+
+from paramak.utils.utils import get_borders
+from paramak.utils.blueprint_to_stl import make_solid_model, boundaries_from_segmentation_map
+if __name__ == "__main__":
+    import os
+    path = os.path.join(os.path.dirname(__file__), 'output')
+    if not os.path.exists(path):
+        os.makedirs(path)
+====SPLIT====
+
+    def sitk: 0 returns the skimage coordinates class when we read the image.
+    def output: 1 return the image after reading , hence return the 2d input image with no changes.
+    def predict: 0 same as sitk.
+    def invert: 5 this is the invert function, it compare the segmented mask to out input image  and returns 0 or 1 
+for foreground and background respectively as a (1*h*w) thing.
+    def binarize: 5 recieves the (1*h*w) output from the invert function and repres
+====SPLIT====
+
+def draw_on_image(img_aug, arr):
+    polys = arr_to_polys(arr)
+    if len(polys) > 0:
+        img_aug = img_aug.draw_polygons(polys, color=(0, 255, 0), alpha=0.3)
+    return img_aug
+    
+    
+    
+class BinarySegmapsOnImage(SegmapsOnImage):
+    
+====SPLIT====
+Where the code is being used ???
+====SPLIT====
+Instances_As_One  : 作为一个整体  
+====SPLIT====
+
+        if any(event_list and not USE_VERTICAL and (self.in_sweep(event_list[-1]) and
+                                                    self.event_comp(event_list[-1], e) and
+                                                    can_modify_existing)
+           for event_list in ifixed(existing)):
+            for i, event_list in ifixed(existing):
+                if event_list and not USE_VERTICAL and self.in_sweep(event_list[-1]) and \
+                        self.event_comp(event_
+====SPLIT====
+
+    def resize(self, size, interpolation="nearest", name=None, deterministic=False, random_state=None):
+        
+====SPLIT====
+
+@ia.deprecated(alt_func="HeatmapsOnImage",
+               comment="Use HeatmapsOnImage.")
+def Heatmaps(arr, shape=None):
+    return HeatmapsOnImage(arr, shape)
+====SPLIT====
+
+class _NetHeatmapsOnImageBatchedAndHeatscored(object):
+    def __init__(self, heatmaps_on_images, heatmaps_on_images_scored, mean_score):
+        self.heatmaps_on_images = heatmaps_on_images
+        self.heatmaps_on_images_scored = heatmaps_on_images_scored
+        self.mean_score = mean_score
+====SPLIT====
+
+from imgaug.producer import Producer
+from random import randint
+
+====SPLIT====
+
+def imwrite_log_numpy_arr(arr_in, natlog_filepath):
+    assert os.path.exists(can_logger_this_file)
+    assert os.path.splitext(natlog_filepath)[-1] == '.NATLog'
+    arr_float64 = simple_file_handler.imread16float64(arr_in)
+    data_shape = arr_float64.shape
+    data_arr_dtype = arr_float64.dtype
+    arr_float64_transposed = arr
+====SPLIT====
+["HeatmapsOnImage"].examples
+====SPLIT====
+
+augmentation = iaa.Sequential([
+    iaa.WithColorspace(
+        to_colorspace="HSV",
+        from_colorspace="RGB",
+        children=iaa.WithChannels(0, iaa.Add((20, 50)))
+    ),
+    iaa.WithColorspace(to_colorspace="RGB", from_colorspace="HSV")
+])
+====SPLIT====
+
+def change_dt_norm(arr, source, target):
+        ia.do_assert(ia.is_np_array(arr))
+====SPLIT====
+
+shape (form tuple)
+
+====SPLIT====
+
+
+====SPLIT====
+
+    What does it do?.
+    
+        Check for win 10 and do something.
+    
+    HINT: Type winapi in the search bar.
+
+====SPLIT====
+
+@parse_data_doc
+def my_method(dataset=None) -> dedent(
+====SPLIT====
+
+Regen = [{
+"Element": "corridors",
+"Vector": V.Corridors(),
+"Description": "Corridors (lab floorplan)",
+}, {
+"Element": "capsule_rw",
+"Vector": V.Capsule("R&W"),
+"Description": "Roofs, internal walls, facades, and subcellular components",
+}, {
+"Element": "interior",
+"Template": T.Standard("interior"),
+"Draw": (
+        lines("cave_a", 5, (1.5
+====SPLIT====
+
+root_app2 = App()
+root_app2.mount("/path/to/notebook", notebook_app)
+
+====SPLIT====
+ if config('db') is not None:
+                async with DB_CLIENT.acquire() as connection:
+                    from .plugin import Dependency
+                    Dependency._database = connection.db
+    @exception_handler("Database Error", stop=False)
+    async def cog_command_error(self, ctx, error):
+        if isinstance(error, BadArgument):
+            embed = Embed(
+                title=_("Bad Argument"),
+                description=_("{1} is not a valid argument").format(ctx.prefix, error.args[0
+====SPLIT====
+
+        NOTE that we use None instead of attaching our funcal tpye
+====SPLIT====
+ A look at our demo function and the list of arguments coming in 
+====SPLIT====
+
+
+====SPLIT====
+
+This code here is run in a background task, so the handler can continue
+doing its work concurrently. The code that says "websocket.close" must be
+executed to make sure we close the socket and clean up after it. 
+
+====SPLIT====
+
+top_positions = positions.drop('cash', axis='columns').abs().max().nlargest(20)             
+df_height = df['name'].value_counts(ascending=True).to_frame().reset_index()
+====SPLIT====
+def get_percent_liquid_on_order(positions):
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+====SPLIT====
+From this code, I can extract split dates from the Yahoo price series. 
+These all have to be rolled forward to get accurate prices immediately 
+following the dividend dates
+====SPLIT====
+
+Quantopian zipline style factor library:
+
+====SPLIT====
+
+def plot_exposures(cum_exposures, ax=None):
+====SPLIT====
+risk_metric.py
+====SPLIT====
+
+def plot_factor_returns(factor_returns, ax=None, legend_loc=1):
+    factor_returns_int = factor_returns * 10000
+    if ax is None:
+        ax = plt.gca()
+    n = get_notional_exposures(factor_returns_int)
+    factor_returns_int['LongReturns'] = 1.5 * n * factor_returns_int[
+        'alpha_True']
+    factor_returns_int['ShortReturns'] = 1.5 * n *
+====SPLIT====
+
+fig, ax = plt.subplots(figsize=(8,8))
+plot_sector_exposures_gross(gross_exposures,sector_dict=SECTORS, ax=ax)
+plt.show()
+
+====SPLIT====
+
+def plot_sector_exposures(exposures_long, exposures_short, sector_dict=None):
+    '''
+====SPLIT====
+
+    Assigns a capitalization bucket to each symbol.
+    In place of sectors.
+
+====SPLIT====
+ Splitting transaction into buckets based on EorB category 
+====SPLIT====
+
+    Measure the turnover of a user's algo.  For example:
+====SPLIT====
+ What is this code used for?.
+    if set_context:
+        show_report(ipy=True)
+        plt.show()
+====SPLIT====
+TODO
+====SPLIT====
+
+def create_sensitivity_tear_sheet(returns, positions):
+    
+====SPLIT====
+
+    if 'sector' in market_data:
+        print("Getting average days_to_liquidate by sector:")
+        sector_days = capacity.average_days_to_liquidate_by_sector(
+        positions, market_data, net_liquidation_fraction=0.2,
+        mean_volume_window=5, last_n_days=last_n_days)
+        print(sector_days)
+====SPLIT====
+
+====SPLIT====
+
+total_cryptos = sorted(list(transactions['symbol'].unique()))
+====SPLIT====
+
+def max_exposure_pct(positions_value, market_data,
+
+====SPLIT====
+
+
+====SPLIT====
+
+if daily_txn_cost and impact is not None:
+    impact_prices = prices - impact * prices.multiply(txn_df.amount, axis=0)
+    adj_daily_returns = \
+        ((impact_prices.shift(1) - entry_slippage_diff) /
+         (impact_prices.shift(1))) - daily_txn_cost
+
+====SPLIT====
+
+def simulate_single_algo(context,
+                         algo_filename,
+                         sim_params,
+                         data_handler,
+                         state_filename=None,
+                         algo_namespace=None,
+                         benchmark_filename=None,
+                         benchmark_sid=None,
+                         benchmark_returns=None,
+                         algo_returns=None):
+    
+====SPLIT====
+
+buy_txn = {
+    'amount': 40.0,
+    'asset': "TSLA",
+    'commission': 13.96,
+    'dt': datetime.datetime(2018, 1, 31),
+    'order_id': 2000,
+    'price': 237.66,
+    'sid': 10090,
+    'type': DATASOURCE_TYPE.TRANSACTION
+}
+
+====SPLIT====
+
+
+====SPLIT====
+
+Code to put the results in some objects that represent each stage of caliper
+
+====SPLIT====
+I am developing some time series code that takes raw price data and outputs
+ a series of price change events.  This code is intended to blend events across
+  two price series together.
+     Because of the nature of these events, they often occur in the same window
+     (values of 10 seconds overlap, and the next event after an overlap is the
+     average of the values that occured in that window).  Therefore, I'm looking
+     to replace existing code that builds an event generator (with events going
+     through an interpolator) with direct operations on the pandas.DataFrames.
+
+====SPLIT====
+
+amount = txn[(txn.log_str.str.find('OPEN ') != -1) & (
+                     txn.log_str.str.strip().endswith('{}'.format(date.split(' ')[0])) + \
+                     (pd.Timedelta(24, 'h') *
+                      (~txn.log_str.str.strip().endswith(' PRICE'))))].amount * \
+                     -1
+====SPLIT====
+Determine returns of long and short trades generated by algorithm
+by comparing backtests done with two different universes,
+the longs/shorts produced by the algo with one universe used as
+a training set, and the longs/short universe produced on the other
+universe that acts as a validation set. Compare returns to benchmark.
+
+====SPLIT====
+This code builds some closing transactions
+====SPLIT====
+
+
+====SPLIT====
+
+x = close.loc['2018-09-04':, :]
+x.index = x.index.floor('d')
+====SPLIT====
+
+def rebalance_portfolio(simulator, positions, data_frequency='daily'):
+    if not any(positions.index == simulator.index[-1]):
+        
+====SPLIT====
+
+ def normalize_weights(self, weights=None):
+        if weights is None:
+            weights = self.positions
+        normal_weights = weights.copy()
+====SPLIT====
+
+from risk_kit import factor_data as factor_data
+from risk_kit import factor_model as factor_model
+from risk_kit import factor_vt as factor_vt
+from risk_kit import zipline_data as zipline_data
+from risk_kit import zipline_model as zipline_model
+from risk_kit import zipline_vt as zipline_vt
+from risk_kit import measure as measure
+from risk_kit import zipline_measure as zipline_measure
+from risk_kit import utils as ut
+====SPLIT====
+
+attrib_by_mean_quantiles = by_quantiles.apply(
+    lambda r: alphalens.utils.get_clean_factor_and_forward_returns(factor_data[r.index],
+                                                                    prices=prices, periods=PERIODS), axis='columns')
+
+====SPLIT====
+
+Returns = pd.DataFrame({'in': [0.01, 0.03, 0.045, 0.065], 
+                    'out':[-0.01, -0.2, 0.025, 0.02],
+                    'cash': [0.005, 0.01, 0.0, 0.0]},
+                    index=['2001-03-01', '2001-04-01', '2001-05-01', '2001-06-01'])
+Returns.index.name='date'
+====SPLIT====
+ Error propogated incremental plotting 
+====SPLIT====
+ 
+    -   Cross-Sectional Momentum
+        use look ahead (yesterday market price) , monthly rebalance
+        can't use model outputs since regression/classification are based on  
+        backtest look ahead so there is no look ahead for daily data in our 
+        model
+        see that trend-following factors show superiority here 
+        Also, realized_volatility factor edge seems to be washing away along 
+        with low_past_return factor edge.     
+
+====SPLIT====
+
+for x in positions.columns[:-1]:
+    print(get_percent_alloc(positions[x]).round(2))
+
+====SPLIT====
+
+R=5;S=5;C=5;N=5;
+def test_returns_calc_foobar(R, S, C):
+    x = np.arange(R)
+    xc = list(map(lambda t: x.C[t:], list(range(R))))
+    xb = list(map(range, C + 1))
+    rl = [(np.sum(_) > 0) for M in xc  ],
+                             for n in xb])
+    rb = [np.zeros((
+====SPLIT====
+
+What is order_performance and perf_tear_sheet?
+====SPLIT====
+
+class MultiColumnLabelEncoder(object):
+====SPLIT====
+
+Experiment Text
+
+====SPLIT====
+
+
+====SPLIT====
+
+def estimate_intraday(returns, positions, transactions, window=250):
+    
+    Intraday equity curve is computed by estimating the value of a 100% 
+    long position at the time of the close price. At the time when a long 
+    position is bought, the price is adjusted to account for slippage. 
+    
+    
+    
+    
+    
+    The algorithm for estimating the curve is as follows:
+    1. Loop through each transaction in transactions (txn),calculating 
+    the first non-NaN, non-zero
+====SPLIT====
+
+def changeFrequency(ts, freq):
+    
+====SPLIT====
+
+Returns is a series, while indexes we iterate through are in a DataFrame
+====SPLIT====
+
+It has become increasingly common for cloud infrastructure to have a 
+local time clock
+
+====SPLIT====
+
+P.S.: 20200318 - Moving data extraction & processing functions to 
+                   another file later
+====SPLIT====
+
+
+====SPLIT====
+
+%matplotlib notebook
+import matplotlib as mpl
+mpl.rcParams['figure.figsize'] = (9.0,9.0)
+
+====SPLIT====
+
+Print out the functions used in this analysis.
+
+====SPLIT====
+
+def uniform_panel_annotator(image_data, colors, colors_rgb,
+                            color_coords, check_invert=False):
+    
+====SPLIT====
+
+====SPLIT====
+
+    NOTE: Investor savings is NOT equivalent to 
+          asset class funds such as S&P500 or US Treasurys
+
+====SPLIT====
+
+Listing 10-3 provides a function to run the entire analysis
+for every equities asset in the data set. This is mostly glue
+code to keep the analysis function as slim as possible. The
+core of this function is simply iterating over every unique
+symbol in the data set, pulling its pricing history, computing
+the daily and monthly returns, and finally calling the
+display_all_charts() helper function.
+
+====SPLIT====
+
+https://stackoverflow.com/questions/4270301/matplotlib-multiple-datasets-on-the-same-scatter-plot
+Quick and dirty: if you are plotting everything in one call and the only argument that changes is 'label'.
+res_df has both men and women data in it: 'men' and 'women'
+====SPLIT====
+-----------------------------------------------------
+Creates 4 plots (1) returns by year (2) cumulative returns by year
+(3) drawdowns by year (4) portfolio metric.
+The Loop provides data for MultiReturns single year
+-----------------------------------------------------
+====SPLIT====
+
+Expected function behavior, such that the array/list can be split into two parts:
+====SPLIT====
+code adapted from https://github.com/quantopian/pyfolio/blob/eba3c67a26cc7f8a660c7894675740caae2ec2ff/pyfolio/plotting.py
+====SPLIT====
+
+====SPLIT====
+
+empty_array = positioned_positions.apply(lambda x : x == 0) 
+empty_array.apply(lambda x : x[x == True].index).apply(lambda x : print(x))
+
+====SPLIT====
+
+def get_max_dd(equity_curve):
+    max2here = equity_curve.expanding(min_periods=1).max()
+    dd2here = equity_curve / max2here - 1.0
+    return dd2here.min()
+
+====SPLIT====
+
+    Plot the weights of the top several positions in a portfolio
+    over time. 
+====SPLIT====
+
+def plot_timeseries(ts_0, ts_1=None, how='left', title='Curves',
+                    figsize=(10, 5), labels=None):
+    '''Graph two time series next to each other
+    '''
+    plt.figure(figsize=figsize)
+====SPLIT====
+
+
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+Like many of the plots in the alphalens package, we only want to see data revolving around day/week/year so we use this as a quick way to set the limit on 
+the x-axis on our plots, so in other words it makes the dates on the X axis start & end around 30/90/365 days
+====SPLIT====
+
+This code is used to show the function of plot_pnl_getters and plot_exposures. They are
+two functions that get members of class PositionSeries and plot them on the same axis.
+The ax.legend is shown to be able to add them to the same plot.
+====SPLIT====
+
+This code graphs our allocation of sectors.
+
+====SPLIT====
+In order to draw a box plot, we first need to aggregate the data by each timeframe. The standard deviation function
+used in the previous steps, like the min and max functions, is a summary (or 1-dimensional reduction) statistic. On the
+other hand, the "rolling" join function creates a moving window across all rows of the data and applies a statistic
+to that window. Using a rolling window, we can compute only one timeframe.
+====SPLIT====
+This is used to plot the effect of commissions on the strategy performance.
+====SPLIT====
+
+====SPLIT====
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+====SPLIT====
+
+def plot_monthly_returns_heatmap(returns, ax=None, **kwargs):
+    
+====SPLIT====
+
+Example 7. Plotting cumulative trading volume across strategies.
+---
+This code snippet (1) simulated returns for 200 days
+(2) calculate from simulation random sampling of 50 shares,
+(3) perform moving average and exponentlly weighted moving averages 
+over M period,
+(4) isolates a Strategy object, containing 3 components EqualtWeightedPortfolio, 
+IntListMOM and IntMultWeightMOM,
+(5) merge common column names using pd.merge,
+(6) isolates the transaction volume,
+(7) assume we have an empty(null)
+====SPLIT====
+ Sentiment analysis.
+====SPLIT====
+
+
+====SPLIT====
+for security in securities:
+    returns = data.loc[:, security].pct_change()[1:]
+    ax = plot_security_returns_distribution(returns, bins=75)
+    plt.suptitle('Return Distribution for Security {}'.format(security))
+    plt.show()
+====SPLIT====
+The tests performed by the Exploding Death Star are described in this paper where the authors describe the different
+steps to be followed during the backtest.
+Example:
+- Trading Universe Requirements.
+====SPLIT====
+
+    long_num_trades = total_round_trips['symbol'][total_round_trips['side'] == 'LONG'].value_counts()
+    long_num_wins = win_loss_data['symbol'][win_loss_data['side'] == 'LONG'].value_counts()
+====SPLIT====
+
+
+====SPLIT====
+
+def glpk_solv(model):
+    strict_int = model.args['integer']
+====SPLIT====
+
+with plt.xkcd():
+    
+====SPLIT====
+
+def calculate_ts_performance(factor_data,
+                             factor_returns,
+                             lookahead_returns=2
+                            ):
+====SPLIT====
+
+metrics_pf = {'[Adj Sharpe]': 'adjusted_sharpe_ratio',
+              '[CAGR]': ep.cagr,
+              '[Max DD%]': ep.max_drawdown,
+              '[Vol]': ep.annual_volatility,
+              '[Norm VaR]': ep.normalized_var,
+              '[ES]': ep.expected_shortfall,
+              '[Underwater]': ep.underwater,
+              '[PerfWO H]': ep.performance_without_holidays,
+
+====SPLIT====
+
+While we think that our window rolling mean and rolling standard
+could also work with an Series, we want to create an function
+that is generic, and can take ints, floats, and Series. Similarly
+we want to create an function that can take in two NumPy arrays
+and their window size.
+====SPLIT====
+
+We simply want to get the model coefficient estimates from the past 6 months on a daily 
+basis so we can compare the historical Sharpe ration to the fair Sharpe of the model.
+
+====SPLIT====
+
+attaches = list()
+for market_file in ['crypto', 'index', 'forex']:
+    market = parse_and_preprocess('data/%s/EURUSD_1.csv' % market_file)
+    attach = pd.DataFrame()
+    for i in range(len(market)):
+        print(i)
+        tick = market.iloc[i]
+        attach['date'] = tick['timestamp']
+        attach['price'] = tick['close']
+        tick = attach.copy()
+        tick = p
+====SPLIT====
+
+for stat_func in FACTOR_STAT_FUNCS:
+    print (stat_func)
+    
+def create_columns(positions):
+    position_matrix = positions.copy()
+    bbl = np.array(position_matrix)
+    if (all(elem in bbl for elem in ["S_HIGH", "S_LOW"])):
+        positions['S_MID_CODE'] = (position_matrix.S_HIGH + position_matrix.S_LOW) / 2
+    else
+====SPLIT====
+
+NOT USED
+====SPLIT====
+
+https://www.quantopian.com/help
+
+====SPLIT====
+
+This is how you calculate these stats given a dataframe then numbers them by group as desired.
+
+====SPLIT====
+
+
+====SPLIT====
+
+Cumulative Returns: A $10,000 investment made in the year 2000 
+                    in each of the stocks would have grown to a 
+                    value of...
+====SPLIT====
+
+apparently this function has been modified from its original fucntionality
+
+====SPLIT====
+
+
+====SPLIT====
+
+Why is this better than the get adjusted return thingy. 
+
+====SPLIT====
+
+def prep_data(start_date="2017-03-01",
+              end_date="2019-05-31"):
+====SPLIT====
+
+====SPLIT====
+
+It is copying the strategy imports to a new locataion
+so that this notebook doesnt need to rely on them.
+This will cause an issue of the imports get changed however
+since this is just run once, there shouldnt be an issue
+
+====SPLIT====
+
+This code snippet is used to parse data into strings. I do not see any indicator that the data was stored previously
+This means that no matter how the actual data was stored, it will parse into the correct format afterwards.
+
+====SPLIT====
+ 
+n_samples = 10**3
+with pm.Model() as inv_y_model:
+    
+====SPLIT====
+
+Declare model
+declare conjugate priors
+sample posteriors
+
+====SPLIT====
+What does this code do?
+====SPLIT====
+
+====SPLIT====
+
+traces_dict = pm.backends.base.load('traces', model=model)
+====SPLIT====
+
+    Selection of A's and B's in Matched Pairs Design
+    -----------------------------------------------
+    Matched pair designs typically start with a set of
+    random treatment samples, |A0|.  
+    next, there are |A1| subjects chosen a-priori
+    with greater probability of being positive.
+    Then, after treatment and examination (when the test is done):
+     T1: (Y could have been zero)
+     T2: (Y > 0)
+    Then, the subjects in A1 are matched
+    with appropriate subjects in T2,
+    resulting
+====SPLIT====
+
+MSFT is outside of the usable range for an S&P 500 index fund,
+based on the data downloaded for that stock.
+drop_timeouts_and_invalid() will remove that row, 
+and any others which had the same OHLC values.
+
+====SPLIT====
+
+====SPLIT====
+A slice sampler to iterate through the likelihood function.
+
+====SPLIT====
+
+
+====SPLIT====
+
+SUB_TRACE_LEVEL_RULES: List[Tuple[int, int]] = [(0, 0)]
+====SPLIT====
+
+input example: 
+====SPLIT====
+
+Sep 15 08: 41: 53.849084 gsosslndt1b3s7 gsd([ 7838]) INFO:gsa-vss:GSASecurityManager. __init__: Major MGMT code version = 3079 (SVN-2136-trunk)  
+Sep 15 08:41:53.849135 gsosslndt1b3s7 gsd([7838]) INFO:gsa-vss:GSASecurityManager.__init__: CheckFileChanges turned off
+ 
+====SPLIT====
+
+def create_monitored_session(
+        checkpoint_dir=None, scaffold=None, master='', hooks=None, chief_only_hooks=None,
+        save_checkpoint_secs=600, save_summaries_steps=None, save_summaries_secs=None,
+        config=None, max_wait_secs=7200, log_step_count_steps=100
+):
+    
+====SPLIT====
+
+M = Log()
+for t in M.training_metrics:
+    print(t.name)
+
+====SPLIT====
+
+====SPLIT====
+
+X_train, y_train, X_val, y_val, X_test, y_test = _load_mnist_dataset([50000, 11, 11, 1],
+                                                                    '../../data/mnist')
+====SPLIT====
+
+    Save Python dict into a pickle file.
+        inputs:
+            - dict : Python dictionary to save into the pickle file
+            - filename : path to the output pickle file
+            - protocol : pickle protocol (see https://docs.python.org/3/library/pickle.html)
+
+====SPLIT====
+
+path = r'C:\Users\Downloads\Keras\Keras-1.1.0\data'
+path
+nb_words = 80   
+====SPLIT====
+
+DATASET = 'PTB-LSTM'
+====SPLIT====
+What is the difference between this code and tf.contrib.learn.datasets.WMTBilingualNews ???
+Created on Aug 15, 2018
+====SPLIT====
+
+a={"idx":"1234"}
+logging.info("DATA SHAPE: {} x {}".format(a["idx"],(a.get('idx')).get('shape')))
+
+====SPLIT====
+
+source: https://gist.github.com/GaelVaroquaux/ead9898bd3c973c40429
+====SPLIT====
+
+os.path.exists          see if the path that it takes as input exists or not. If it does,it returns True,else False.
+====SPLIT====
+
+@tf.function 
+====SPLIT====
+
+sess, t_image = tf_init()
+io_dict = {v.name:v for v in t_image.values()}
+vgg = Vgg19( vgg19_npy_path = PATH)
+vgg.print_layers()
+load_and_assign_npz(sess, name=PATH, network=vgg)
+images = np.random.rand(1, 512, 512, 3)
+feed_dict = {t_image['image']:[images]}
+np_bgr, np_prob =
+====SPLIT====
+
+def variable_summaries(var):
+    
+====SPLIT====
+tf.GraphKeys.GLOBAL_STEP:
+    A Tensor representing a global step counter 4 global_step_count
+====SPLIT====
+
+flags_order_name = [
+    'mode',
+    'model',
+    'lr',
+ ]
+====SPLIT====
+
+def load_npy_to_generator(path, name = 'file'):
+	file_path = '{}/{}'.format(path, name)
+	res = [tuple(d.item()[0], d.item()[1]) for d in np.load(file_path)]
+	return res
+
+====SPLIT====
+
+from sklearn import datasets
+digits = datasets.load_digits()
+====SPLIT====
+
+up_one = os.path.join(ImageFolderpath, '..')
+reduced_one = os.path.join(up_one, "reduced")
+if not os.path.exists(reduced_one):
+    os.mkdir(reduced_one)
+====SPLIT====
+
+这个代码的作用是把num个同名的照片带上_a,_b,_c,...等后缀。
+我需要输出主键需要每一个照片都是不同的名字
+
+====SPLIT====
+
+MaybeDownloadAndExtract('blocks.step.tar.gz',        DATA_DIR,                                           extract=True)
+MaybeDownloadAndExtract('comp-iled.stl.tar.zip',     os.path.join(DATA_DIR, 'thingi10k_voxelized'),       extract=True)
+MaybeDownloadAndExtract('proc-essed.stl.tar.gz',     os.path.join(DATA_DIR, 'thingi10k_voxelized'),       extract=True)
+MaybeDownloadAndExtract('thingi10k
+====SPLIT====
+
+https://pymotw.com/2/operator/itemgetter.html
+https://docs.python.org/2/library/operator.html
+https://docs.python.org/3/library/operator.html
+
+====SPLIT====
+
+def reweight_learning(X, y, T):
+    from scipy.optimize import FSOLVE as solve
+    theta = np.ones((X.shape[1],1))  
+    for t in T:
+        
+====SPLIT====
+
+def calc_affine_translation_matrix(translation_x, translation_y):
+    transformation_matrix = np.zeros(shape=(3, 3))
+    transformation_matrix[0, 0] = 1.0
+    transformation_matrix[0, 2] = translation_x
+    transformation_matrix[1, 1] = 1.0
+    transformation_matrix[1, 2] = translation_y
+    transformation_matrix[2, 2] = 1.0
+    return transformation_matrix
+def calc_affine_is
+====SPLIT====
+
+    from PIL import Image, ImageDraw
+import json
+====SPLIT====
+This code simular to the above regularization methods, however these methods cannot be used as 
+generator, which means we need to apply this kind of augment by batch by yourself. 
+So, Maybe will use these codes to training.
+
+====SPLIT====
+
+
+====SPLIT====
+
+{'val': {
+    'file':'airbus2/vol27.tif', 'patch_size': [256, 256], 
+    'number_of_images': 274, 'result_folder': "airtest/"
+}}
+
+====SPLIT====
+
+Dummy images or noise is added to current batch for methods to implement 
+Image augmentation methods
+====SPLIT====
+
+
+====SPLIT====
+
+temp=Train_data.iloc[0,1:].values
+temp=np.reshape(temp, (28,28,1)).astype('float32')
+temp=temp/255.
+temp_big=random_zoom(temp, 20/28, 20/28)
+for i in range(21,28):
+    for j in range(21,28):
+        temp_big[i,j]=0
+====SPLIT====
+
+class Mixer():
+    def __init__(self, alpha, mixup):
+        self.mixer = [cutmix, mixup][int(mixup)]
+        self.proba = [alpha, 1.][int(mixup)]
+        self.is_on = True
+        
+    def update(self, is_on):
+        self.is_on = is_on
+        
+    def __call__(self, inp1, t1, inp2, t2):
+        if not self.is_on:
+            return in
+====SPLIT====
+
+def flip_ud(x, is_random=False):
+    if is_random:
+        return np.asarray(np.flipud(x))
+    else:
+        return x
+====SPLIT====
+
+img_file = "/data/zeng/trainFolder/kodim04.png"
+im = Image.open(img_file)
+imgs = []
+for i in range(8):
+    ims = im.copy()
+    imgs.append(adjust_saturation(ims))
+show_images(imgs, 0, "saturation")
+
+====SPLIT====
+
+A small descriptor to check the indentation of a single line of code.
+====SPLIT====
+
+def random_brightness_with_hsv(im, hue=15, sat=10, val=10):
+    assert hue >= 0 and hue <= 255
+    if np.random.random() > 0.5:
+        im = change_sat(im, sat, is_random=True)
+        im, _ = random_hue(im, hue, is_random=True)
+    im = pixel_value_scale(im, 0.9, is_random=True)
+    return im
+====SPLIT====
+
+crls_image = Image.open(os.path.join(blank_image_folder, blank_image_names[30]))
+blank_image = np.asarray(crls_image, dtype=K.floatx())
+yellow_image = Image.open(os.path.join(yellow_image_folder, random.choice(os.listdir(yellow_image_folder))))
+blue_image = Image.open(os.path.join(blue_jacket_folder, random.choice(os.listdir(blue_jacket_folder))))
+====SPLIT====
+ test vgg16
+====SPLIT====
+
+CLEAN_FILE = 'clean.txt'
+train_data_location = ''
+meta_data_location = ''
+====SPLIT====
+ def cnn_model(X, y, is_training,
+              img_len=28, channel_num=1, output_size=10,
+              kernel_sizes=[3], kernel_features=[24], fc_features=[48],
+              conv_padding='SAME', pool_padding='SAME',
+              conv_act=tf.nn.relu, conv_use_bias=True,
+              fc_act=tf.nn.relu, fc_use_bias=True,
+              out_fc_act=None,
+====SPLIT====
+
+Below, we will convert all the entries of work [:,:,1,4] in to binary classification:
+
+====SPLIT====
+
+from tensorlayer.files.utils import delete_file_or_folder, maybe_download_and_extract, maybe_download_and_extract_nitish
+from tensorlayer.files.utils import folder_exists, maybe_download_and_extract_ladicky
+from tensorlayer.files.utils import maybe_download_and_extract_mscoco, file_exists
+from tensorlayer.files.utils import maybe_download_and_extract_UCF101, maybe_download_and_extract_cifar10
+
+====SPLIT====
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--min_area", type=float, default=200.0)
+    parser.add_argument("--polygon_clip_dist", type=float, default=15.0)
+    parser.add_argument("--separate_masks", type=int, default=1)
+    parser.add_argument("--df_annotations_file", type=str, default="myNas/objectDetector/dataset/
+====SPLIT====
+
+def parse_anns_for_darknet(anns):
+    
+====SPLIT====
+
+      Left  im
+    1 ___ 2_  flip_image=False->    im
+    |  a  |
+    |  3 _|
+  |__|___|
+   flip_image=True->
+      __________
+     |         |
+    2|    1
+      |_________|
+====SPLIT====
+
+====SPLIT====
+
+load_data('data/shoe.json')
+====SPLIT====
+
+====SPLIT====
+
+if __name__ == '__main__':
+    d = MyDatasetFactory(mode='UHDB31')
+    d.initialize(create_meta=True)
+====SPLIT====
+
+list_a = [123, 'xyz', 'zara', 'abc', 123];
+====SPLIT====
+
+def _gaussian_kernel(x_0, y_0, offsets, sigma_x, sigma_y):
+    channels = offsets.shape[0]
+    nx, ny = offsets.shape[1:3]
+    grid_x = tf.cast(tf.range(nx) - x_0, dtype=tf.float32)
+    grid_y = tf.cast(tf.range(ny) - y_0, dtype=tf.float32)
+    gx = tf.cast(grid_x, dtype
+====SPLIT====
+
+many algorithms, e.g. DQN, need training data: (s_t, a_t, r_t, s_{t+1}, done)
+To get this data, we have to have a environment.
+However, many functions are written as well within Agent class, in order to keep the following code more concise
+So we transfer everything in Agent class to main program(within main_DQN() ), and leave the class Agent
+which is only composed of __init__ and model
+
+====SPLIT====
+
+====SPLIT====
+
+Outputs a summary protocol buffer containing a single scalar value.
+This is an alternative to:
+  a) creating a node in the graph that generates a constant value such as 0.
+  b) creating your summary node as delta() - baseline.
+  c) using SetSummary description() to describe your summary.
+If a summary has the same tag as another summary, the first one created will be
+"wins". Summary.WhichOneof can be used to disambiguate the conflict.
+====SPLIT====
+
+def  choice_action_by_probs( probs , action_list  =  None ):  
+    probs  =  np . array ( probs )  
+    if  action_list  is None :  
+        action_list  =  np . arange ( np . shape ( probs )[ 0 ])  
+    else :  
+====SPLIT====
+
+def cross_entropy(output, target, epsilon=1e-12, scope=None, return_logit=False):
+    
+====SPLIT====
+
+a = tf.nn.sigmoid_cross_entropy_with_logits(labels=tf.zeros(10,dtype=tf.float32), logits=tf.ones(10,dtype=tf.float32)) 
+====SPLIT====
+
+inv_pred = tf.log(1. - output + epsilon)
+b1e2_cp = tf.expand_dims(b1e2, 1)
+b1e2_zeros = tf.cast(tf.zeros_like(b1e2_cp), tf.float32)
+inv_pred_expand = tf.concat([b1e2_zeros, inv_pred], 1)
+man_pred = target * tf.log(output + epsilon) + ((inv_pred_expand) * (
+====SPLIT====
+
+---------------------------------
+first_layer = [
+    ('unpool', unpool),
+    ('conv1', ['conv2d', {'test_indicator': 'test_indicator'}]),
+    ('relu1', relu),
+    ('conv2', conv2d),
+    ('relu2', relu),
+    ('pool', max_pool),
+]
+====SPLIT====
+
+WordIdx = [InstanceId, [words], [marks], [depends]]
+node: InstanceId
+word: [InstanceId, words]
+edge: [InstanceId, mark]
+we have Tensor variable (*,number of words) for each variable
+
+====SPLIT====
+
+Computes the Row-wise Eltwise-sum of a matrix of vectors.
+A common trick in reinforcement learning is to compute a vector o as the row-wise summation of a matrix of vectors x: i.e.
+o = x.sum(axis=1)
+To do this, it reshapes x such that the first dimension represents a row
+
+====SPLIT====
+with tf.GradientTape() as tape:
+    value = ramp(x=tf.constant([[1, 2, 3]]), v_min=0, v_max=5)
+    res = tape.gradient(value, value)
+    print(res)
+====SPLIT====
+
+def compose(*funcs):
+    
+====SPLIT====
+Builds and returns the overall deep graph. 
+Args:
+    x: placeholder for the input tensor
+    keep_prob: placeholder for the dropout rate
+    channels: number of colors in the image (1 for MNIST)
+    n_class: number of class labels - by default 46 for the quickdraw challenge
+Returns:
+    A gaph containing the calculated logits.
+
+====SPLIT====
+ds = ds.map(lambda input_x, input_y: (tf.py_func(retrieve_seq_length_op, [input_x], tf.int32), input_y))
+ds = ds.map(lambda input_x, input_y: (tf.py_func(retrieve_seq_length_op3, [input_x], tf.int32), input_y))
+====SPLIT====
+
+class TensorRNNCell(RNNCell):
+====SPLIT====
+
+def _compute_loss(self, n_x, n_z, n_x_target):
+    
+====SPLIT====
+
+utils.py: compute |det(J)| for multiple images
+
+====SPLIT====
+
+
+====SPLIT====
+
+loaded_data = np.zeros((1000000,8))
+with open('data/fm1.bin.npy','rb') as f:
+    for i in range(500):
+        for j in range (1000000):
+            loaded_data[j][0] = f.read(4)
+        loaded_data[j][1] = f.read(4)
+        loaded_data[j][2] = f.read(1)
+        loaded_data[j][3] = f.read(1)
+        loaded_data[j
+====SPLIT====
+def _fill_project_info(self, kwargs):
+    project_name = kwargs.setdefault('project_name', self.project_name)
+    if project_name == 'undefined':
+        project_found = False
+        _list = self.db.Project.find()
+        for new_project in _list:
+            if new_project['user_name'] == getpass.getuser():  
+====SPLIT====
+
+learn = LangLearner("English_French", "char")
+
+====SPLIT====
+ Display All 
+====SPLIT====
+
+from service_instance import ImageDatasetService 
+from classes.config import MainConfig
+====SPLIT====
+
+        from test_save import Dataset
+        
+        def publish_dataset(dataset_i):
+            pd = Dataset()
+            mongo_ip = "people.csail.mit.edu"
+            if hostname == "samba":
+                pd.dataset_fs = gridfs.GridFS(pd.db, "dataset_cated")
+                pd.connect(mongo_host=hostname, mongo_ip=mongo_ip)
+            else:
+                pd.connect(
+====SPLIT====
+
+
+====SPLIT====
+
+        @staticmethod
+        def _process_training_data(script_name="txt"):
+            
+====SPLIT====
+
+        if kwargs.get('save_notebook', True):
+            DataStorage.save_notebook()
+====SPLIT====
+
+        if new_row == None:
+            logging.error("[Database] error while insert valid log")
+            return None
+        else:
+            self.db.commit()
+            return True
+
+====SPLIT====
+
+        project = inspect.stack()[1][3]
+        if "_id" not in kwargs:
+            raise ValueError("Please Specify ID of element")
+        if project != 'get_training_and_validation_loss':
+            self._fill_project_info(kwargs)
+        else:
+            del kwargs['project']
+        id = kwargs['_id']
+        self.db.TrainLog.delete_one({'_id': id})
+        info = {
+                'project': kwargs['project'],
+====SPLIT====
+
+    def update(self, database_path: str, issue_num: str, status_code: int, **kwargs) -> None:
+        with database_path.open("rb") as f:
+            self.db[database_name].update_file({"issue_num": issue_num}, {"status_code": status_code}, f)
+        logging.info("[Database] Update database SUCCESS")
+====SPLIT====
+
+    def create_tasks(self, params):
+        task_list = []
+        for param in params:
+            task_list.append(self.create_task(**params))
+        return task_list
+
+====SPLIT====
+
+PARSE_TREE_TYPES = ("TASK", "TASK_ATTR", "PROJECT_QUERY_VALUE")
+ID = "ID"
+PARENT_TASK = "parent_task"
+PARENT_HAS_TASK = "parent_has_task"
+PARENT_HAS_ATTR = "parent_has_attr"
+PARENT_IS_ATTR = "parent_is_attr"
+PARENT_NETWORK = "parent_is_network"
+PARENT_ATTR_NAME = "parent
+====SPLIT====
+
+@Auth.auth_orm_sync
+@Session.add_row
+def update_user(self, update_params, entity_id):
+    user_item = self.get_user(entity_id=entity_id)
+====SPLIT====
+
+        
+====SPLIT====
+From what I understand, this just makes a copy of the given list a specified number of times (n) 
+and then takes NGrams of that list. Not sure why this is needed.
+
+====SPLIT====
+
+print("len(X_train[0]) = %d" % len(X_train[0]))
+print("X_train[0] = %s" % X_train[0])
+print("len(X_train[1]) = %d" % len(X_train[1]))
+print("X_train[1] = %s" % X_train[1])
+print("len(X_train[2]) = %d" % len(X_train[2]))
+print("X_train[2] = %s"
+====SPLIT====
+
+def image_clean(images, path=''):
+====SPLIT====
+Random crop the given image.
+Args:
+    image (3-D Tensor): Image to be cropped.
+    size (sequence or int): Desired output size of the crop. If size is an
+        int instead of sequence like (h, w), a square crop (size, size) is
+        made.
+
+====SPLIT====
+
+Using the sprits array and center movements, we can adjust sprites by tracking the coords of their movement paths.
+
+====SPLIT====
+ 
+TensorFlow operations can be described as either building a graph of Ops (
+operator graph) or running a graph of Ops (session). Graph construction 
+phase is when Ops are added to the default Graph. Session execution starts 
+after a call to  Session.run(). Once the Session is created and the graph 
+is finalized (no more additions to the graph). To be able to run a 
+computation graph, it must be created. The following code snippet creates 
+a single node in the graph.
+
+====SPLIT====
+
+def template_generator(img_path='my.jpg'):
+    template = load_image(img_path)
+    h, w = template.shape[0:2]
+====SPLIT====
+
+import tensorflow as tf
+
+====SPLIT====
+
+
+====SPLIT====
+
+For drawing the parterns in the weight matrix.
+
+====SPLIT====
+
+
+====SPLIT====
+
+
+====SPLIT====
+
+====SPLIT====
+
+    def print_layers(self)
+        pass
+
+====SPLIT====
+
+def sample_Z(self, m, n):
+        return np.random.uniform(-1., 1., size=[m, n])
+
+====SPLIT====
+
+    
+====SPLIT====
+
+e.g the resnet uses conv2d, and for conv: self.weight and bias are init..
+but for short_cut: (self.weight, _,_) are init..
+
+====SPLIT====
+
+value_dict = extract_feature( [img_dir])
+====SPLIT====
+
+class DataSet(object):
+    @staticmethod
+    def get_fserial_func(name):
+        download_folder = tl.files.serialize_from_hdf5(name)
+        return FilesHook(name, download_folder)
+====SPLIT====
+
+print(vgg16net.proposed_method) 
+====SPLIT====
+
+My question: pytorch channel-last standard was found on first layer, what effect do channel-first standard have?.
+when skimage.data_dir to numpy image format
+img_np= misc.(os.path.join(os.path.sep, skimage.data_dir, png, "astronaut.png"))
+
+====SPLIT====
+  input_tensor:x;
+        weight:w;
+        bias:b;
+        strides:1*2;
+        padding:'SAME' or 'VALID';
+        use_nesterov: if used use cmd.momentum;
+        is_training:if true,open to activate;
+        wd:dropout;
+        optimized:optimize the lagrest varible;
+        actFun:activate function;
+        data_format : x.format befroe passed(NCHW or NHWC)
+
+====SPLIT====
+
+def _squeeze(x, squeeze_dims=None, data_format='NHWC'):
+
+====SPLIT====
+
+For the case, a corth=1, the ymin=y, ymax=y+1,
+
+====SPLIT====
+
+x_label_string = tf.placeholder(tf.string, name='labels')
+
+====SPLIT====
+
+from tensorflow.python.tools import inspect_checkpoint as chkp
+====SPLIT====
+
+Used to initialize the batch norm variables.
+Used for setting some variables to have value from other variables.
+
+====SPLIT====
+
+if __name__ == '__main__':
+    train_m()
+    word_to_id = get_vocab(vocab_file, forward_vocab_to_id, max_vocab_size)
+    id_to_word = get_vocab(reverse_vocab_file, reverse_vocab_to_id, max_vocab_size)
+    char_to_id = get_vocab('raw_data/char_vocab.txt', forward_vocab_to_id, max_c_vocab_size
+====SPLIT====
+
+This piece of code is to remove any redundant element in a list.
+
+====SPLIT====
+
+import tensorflow as tf
+x = tf.Variable(-2.0)
+y = tf.Variable(2.0)
+====SPLIT====
+
+from sklearn.utils.metaestimators import _BaseComposition
+====SPLIT====
+
+Wondering how this will be used in practice.
+The _get_batch method calls this. does not appear to be of use for anything.
+
+====SPLIT====
+
+Classification Accuracy: Percentage of corrects classifications. (normalized confusion table).
+Interesting in [unbalanced data] to evaluate predictions
+====SPLIT====
+
+def anorm2(a):
+    return (a*a).sum(-1)
+def anorm(a):
+    return np.sqrt( anorm2(a) )
+
+====SPLIT====
+
+from random import Random
+import time
+====SPLIT====
+
+    python terminator.py
+====SPLIT====
+ if sys.platform == 'win32':
+                        
+====SPLIT====
+
+if ((main_program != None) and
+    ("main_program" not in dir()) and
+    (not is_compiled_with_cuda())):
+====SPLIT====
+
+if os.path.isdir(check_folder) and view_training_data:
+    training_files = os.listdir(check_folder)
+    num_training_files = len(training_files)
+    
+    figure, ax = plt.subplots(1, num_training_files, figsize=(num_training_files * 2.5, 2.5))
+    
+    if num_training_files == 1:
+        ax = ax.reshape(1, 1)
+    for file_idx in range(num_training
+====SPLIT====
+
+====SPLIT====
+
+def word_sequence_similarity(predict, label):
+    '''
+        Args
+            predict : [list of int]
+            label [list of int]
+        Return
+            mean_IOU : float
+            '''
+    predict_ = np.asarray(predict) + 1
+    label_ = np.asarray(label) + 1
+    IOUs = (np.asarray(len({
+                          ''.join(word):word for word in label_[((predict_ == word_len).sum(1) == word
+====SPLIT====
+
+s = np.array([[1, 2, -3, 5], [1, 7, -9, 11], [12,14,-19,20]])
+seed = 123
+beam_width = 5
+pending_translation = []
+max_len = 10
+finished_translation = []
+top_k = 5 
+====SPLIT====
+
+ - tl.logging.config, config with tensorlayer logs
+ - DATAPATH, root data path for the dataset mtsc
+ - data_type, train, valid or test
+ - output_file, encode the data and save.
+
+====SPLIT====
+
+Same as ptb_word_lm but one can chose how to split train, validation and test
+
+====SPLIT====
+
+eval_folder = 'evaluation_wordanalogy_together'
+====SPLIT====
+
+====SPLIT====
+
+Analysing the data set and calculing the frequency and return the dataset.
+
+====SPLIT====
+
+====SPLIT====
+
+Writes dictionary items to file
+    Args:
+        items: key-value pairs to write
+        file_name: The name to wrtie to
+        Comment: true ==> The key values are followed by 
+====SPLIT====
+
+    create_vocabulary("en/question.train.en", "en/vocab40000", 40000)
+    data_to_token_ids("en/question.train.en", "en/question.train.ids40000.en", "en/vocab40000")
+    
+====SPLIT====
+
+import just for visualizing the results
+
+====SPLIT====
+
+reviews = pd.read_csv('labeledTrainData.tsv', header=0, delimiter='\t', quoting=3)
+train = pd.DataFrame(reviews)
+input_text=train['review']
+input_label=train['sentiment']
+
+====SPLIT====
+
+def batch_to_ids(self, words):
+        
+====SPLIT====
+
+    def word_to_id(self, word):
+        if word in self._word_id:
+            return self._word_id[word]
+        return self.unk_id
+====SPLIT====
+
+def training_word2vec_model(corpus=open('/notebooks/DeepLearningTutorials/data/ptb/long_abstracts_en.txt', 'rb').readlines()):
+====SPLIT====
+
+import getpass
+print "Api V2"
+client = "%s@%s" % (getpass.getuser(), socket.gethostname())
+username = "pjs"
+cur = db.cursor()
+swarmId = createAndStartSwarm(client=client)
+injectAccountingEntries(swarmId, username)
+cur.close()
+
+====SPLIT====
+
+Run models in all client jobs and update their records, returning a list of
+modelIDs and checkpointNumbers for the models
+
+====SPLIT====
+
+Actually _LOG acts as a global singleton reference.
+
+====SPLIT====
+
+dbArgs = _getCommonSteadyDBArgsDict()
+scenarios = []
+====SPLIT====
+
+if __name__ == 
+====SPLIT====
+
+  def recycleNumOutstandingInstances(self):
+    return self._clsNumOutstanding
+
+====SPLIT====
+
+    
+====SPLIT====
+
+    def __del__(self):
+      self._logger.info("In __del__()")
+      self.close()
+
+====SPLIT====
+
+    def _createConnection(self, resetSession=False, **kwargs):
+        DBConn = MySQLdb.Connect(**kwargs)
+====SPLIT====
+
+Get the value of a Bluetooth connected Mac's Characteristic property from
+the Bluetooth D-Bus interface.
+
+====SPLIT====
+
+if __name__ == "__main__":  
+  pooler = DbPooler('sqlite', 'database.db', logger=None)
+  
+  import time
+  import ranking
+  
+====SPLIT====
+
+class SparseBinaryConnectionPolicy(BaseConnectionPolicy):
+  
+====SPLIT====
+
+class ConnectionWithUniqueCursor:
+  def __init__(self, dbConn):
+    self._dbConn = dbConn
+    self._cursor = dbConn.cursor()
+====SPLIT====
+
+x1 = OracleUtils()
+x1.init()
+====SPLIT====
+
+def _updateBuffers(self, state):
+    self._bufferedInputs = self._bufferedInputs[0:0]
+    self._registry = self._registry[0:0]
+    
+====SPLIT====
+
+class CAPredictResults:
+====SPLIT====
+
+from nupic.algorithms.kNNAnomalyClassifier import kNNAnomalyClassifier
+
+====SPLIT====
+
+  def outlierRemovalCallback(self, model, data):
+    if self._metric == 'model_prodDist':
+    
+      [active_outlier_indices, output] = self.denseDistanceData(outputs)
+      logger.debug("Produced a %s outlier" % output.helperName)
+      logger.debug("Maximum activation: %f" % numpy.max(outputs[:,2]))
+      logger.debug("Num outliers: %i" % len(numpy.where(outputs[:,2
+====SPLIT====
+
+outputFolder = "19-Jun-2013/NEW_cioffi/small_overlaps/33min_before1_after1_smallTraining_overlap85_4shortFiles/"
+outputFolder = "/n/home09/cioffi/Software/dataSetStudy1/OLD_cioffi/small_overlaps/33min_before1_after1_smallTraining_overlap85_4shortFiles"
+outputFolder = "19-Jun-2013/OLD_cioffi/large_overlaps/33min_before1
+====SPLIT====
+
+def _dynamicUpdate(self):
+====SPLIT====
+
+if __name__ == '__main__':
+    
+====SPLIT====
+
+for item_anchor in item_list:
+  for item_candidate in item_list:
+  compare(item_anchor, item_candidate)
+  
+====SPLIT====
+
+def _categoryToLabelList(self, category):
+====SPLIT====
+
+_WORKER_TYPE_HANDLER_MAP = {
+  CONFUSION_MATRIX: _ConfusionMatrixHelper,
+  CATEGORY_HISTOGRAM: _CategoryHistogramHelper,
+  CUSTOM_VALUE: _CustomValueHelper,
+  VALIDATION_STATS: _MetricStatsHelper,
+  ANOMALY_EVIDENCE_CATEGORY: _AnomalyEvidenceMetricsHelper,
+  PROPERTY_EMAIL_COMMAND: None,
+  PROPERTY_DATA_FILE: None,
+====SPLIT====
+ class DistalSequenceColumn(object):
+  __slots__ = ('numCellsPerColumn', 'tm', 'distalDendriteSegments',
+              'apicalDendriteSegments')
+====SPLIT====
+
+  @staticmethod
+  def fromFile(filename):
+    htm = HTMPredictionModel()
+====SPLIT====
+
+Question - Iterate through all the files in the directory with the handle names
+Insight - We are operating on all the files in the source folder
+
+====SPLIT====
+
+  def resetSequenceStates(self):
+    self._learnedSequence = numpy.zeros(self._numColumns, dtype=realDType)
+====SPLIT====
+
+    for k in range(self._numColumns):
+      self._boostFactors[k] *= self._dutyCycles[k]
+      self._dutyCycles[k] = 0.01 * self._dutyCycles[k] + \
+          0.99 * self._minPctActiveDutyCycles[k].getBestMatchingBucketScore(0.1)
+      self._activeDutyCycles[k] *= 0.99
+      self._overlapDutyCycles[k] *= 0.99
+
+====SPLIT====
+
+    maxDutyCycles = self._overlapDutyCycles[self._dutyCyclesGreaterThanOne].reindex(
+        self._overlapsGreaterThanMinOverlap
+      )
+    maxDutyCycles.fillna(1.0,inplace=True) 
+====SPLIT====
+
+  def _updateMinDutyCyclesGlobal(self):
+    
+====SPLIT====
+
+  
+  def _updateDutyCyclesHelper(self, dutyCycles, newValues, period):
+    
+====SPLIT====
+
+def getPowerOfTwoDims(vect):
+    
+====SPLIT====
+
+One speculation is that if a column is free to "roam" in a 1D space, it may hunt out
+  a default location with a preferred density, along with a sign representing a preferred polarity
+  along the preferred dimension.
+Encoders with such features might behave best in this kind of environment.
+  
+A second speculation is it often takes a lot of time for spatial pooler to get good uniform coverage,
+  and the above might speed up this process.
+
+====SPLIT====
+
+  30  28  26  24  22
+  31  29  27  25  23
+  32  30  28  26  24
+  33  31  29  27  25
+  34  32  30  28  26
+====SPLIT====
+
+      if self._synPermActiveInc >= 0:
+        maskPotential = numpy.where(self._potentialPools[columnIndex] > 0)[0]
+        perm.flat[maskPermanence] += self._synPermActiveInc
+  
+      self._updatePermanencesForColumn(perm, columnIndex, raisePerm=False)
+
+====SPLIT====
+
+      for i in xrange(len(mask)):
+        if perm[mask[i]] < self._synPermConnected:
+          perm[mask[i]] += self._synPermBelowStimulusInc
+          if perm[mask[i]] > self._synPermConnected + PERMANENCE_EPSILON:
+            perm[mask[i]] = self._synPermConnected
+            numConnected += 1
+      if numConnected >= self._stimulusThreshold:
+        return
+        
+====SPLIT====
+
+def _initPermanence(self,
+                    potentialOverlaps: numpy.ndarray,
+                    stimulusThreshold: int,
+                    connectivity: numpy.ndarray,
+                    random: numpy.random.RandomState) -> numpy.ndarray:
+    
+====SPLIT====
+
+if __name__=="__main__":
+    numCols = 16
+    numInputs = 10
+    test0=random.Random()
+    test1=random.Random()
+====SPLIT====
+
+class Connections(Object):
+  def __init__(self, numCells:UInt, inputsPerCell:UInt, permanent:bool, verbosity:UInt=0):
+    
+====SPLIT====
+
+    def _dump(self):
+      p = (self._potentialPools
+           .reshape(self._numColumns, self._potentialRadius + 1,
+                    self._columnDimensions.size).swapaxes(1, 2))
+      p += self._potentialRadius // 2
+      print numpy.array_str(p, max_line_width=numpy.inf)
+      print ' '
+      print self._activeDutyCycles
+
+====SPLIT====
+
+    
+====SPLIT====
+
+But the _inhibitColumns function performs most of the important 
+computations of the algorithm.
+We make a copy of the overlap vector, because the inhibition 
+phase will destroy it.
+This phase calculates the necessary values for a moving local 
+area of the input space, for each columns overlapping region.
+Given the connected column overlapping region, we have:
+====SPLIT====
+
+====SPLIT====
+
+ TestTM <TP updatePeriod> <fast grep column activity> <TP SynPermConnected>
+   <TP giveNum> <derivedFromTP> <Modify inactiveSegCells> <permanence increment>
+   <permanence decrement>
+   For any test to work, need a `numInputs`, `columnDimensions`, and `cellsPerColumn`
+
+====SPLIT====
+
+Probably using slices just to have to do fewer neighborhood calculations.
+Sounds good to me.
+
+====SPLIT====
+
+  def _adaptSynapses(self, inputVector, activeColumns, previousPredictiveCells,learn):
+
+====SPLIT====
+
+        __pycascading__all__ = []
+        for arrayType in ('Int8', 'UInt8', 'Int16', 'UInt16',
+                          'Int32', 'UInt32', 'Int64', 'UInt64',
+                          'Real32', 'Real64',
+                          'Bool', 'Byte', 'Char', 'String'):
+            self._globalEnv['__pycascading__all__'].append(arrayType)
+            self._globalEnv[arrayType] = Array(arrayType)
+            self
+====SPLIT====
+for i in outputs:
+  portspec = getattr(portspecprovider,i)
+  print 'i', i,  portspec.cursor, portspec.type, type(portspec)
+  getOutputPorts(self)'''
+
+====SPLIT====
+
+Job dispatcher -- encapsulate queuing and job scheduling as used in runner.py
+
+====SPLIT====
+
+def setParameterMap(self, parameters): 
+    "As a side effect this could change child shapes too."
+    for (name, value) in parameters.items():
+      try:
+          (setter, getter) = self._getParameterMethods(name)
+          if setter is None:
+              msg = ("setParameterMap -- parameter name "
+                  "'%s' does not exist in region %s of type %s"
+                  % (name, self.name, self.type)) 
+              logging.error(msg)
+              raise E.ParameterEx
+====SPLIT====
+
+  def getGuardrailParameter(self, name):
+    rv = self.parmDict.get(name)
+    if rv is not None:
+      return rv
+    
+====SPLIT====
+
+ for n in l:
+      n._getOwner()._addOwnedComponent(n)
+      regionId = n._getOwner()
+      if regionId not in regions:
+        regions[regionId] = error_handler.Warning("uninitialied region")
+      if not hasattr(regions[regionId], "_ownedComponents"):
+        regions[regionId]._ownedComponents = []
+      regions[regionId]._ownedComponents.append(n)
+
+====SPLIT====
+
+@staticmethod
+def readFromProto(proto):
+    
+====SPLIT====
+
+    if context.learningMode:
+        
+====SPLIT====
+
+from machine_iteration_listener import MachineIterationListener
+====SPLIT====
+
+    
+====SPLIT====
+
+      self._logger.info(
+        "Finished: modelID=%s; %s records processed",
+        self._modelID,  self._currentRecordIndex + 1)
+====SPLIT====
+
+  @staticmethod
+  def clone(modelID):
+    jobStore = self._jobScheduler.getDBConnection()
+====SPLIT====
+
+          
+====SPLIT====
+
+Commented out code could be useful...
+====SPLIT====
+
+  def _calculateWorkingNodeCount(self):
+    jsonInfo = json.load(urllib.urlopen(self.__monitorURL))
+    availableNodeCount = 0
+    for obj in jsonInfo:
+      if obj['State'] == 'available':
+        availableNodeCount += obj['Headcount']
+    workingNodeCount = availableNodeCount - 1
+    
+====SPLIT====
+
+
+====SPLIT====
+ 
+        self._jobsDAO.jobSucceeded(
+          self._jobID, self._errorCount=0, self._getLatestPredictions())
+        
+        if self._isBestModel:
+          jobResults['saved'] = True
+          jobResults['bestValue'] = currentMetric
+          self._jobsDAO.jobSetFieldIfEqual(self._jobID, 'results',
+                                           jobResultsStr,
+                                           json.dumps(jobResults))
+====SPLIT====
+
+ f = open(self._predictionsFileName, 'w', buffering=1)
+ f.flush()
+    
+    while len(self.__predictionCache):
+      entry = self.__predictionCache.pop(0)
+      f.write(str(entry['out']) + "," + str(entry['classification']))
+      if entry['result'] is not None:
+        f.write(',')
+        f.write(str(entry['result'][0]))
+      f.write("\n")
+    f.close
+====SPLIT====
+
+    for arg in sorted(self.__predictionCache.keys()):
+      targetKey = json.dumps(arg)
+      if targetKey in self.__finalPredictions:
+        continue
+====SPLIT====
+
+_wiringInputRegions = {
+                      "daily-county": (
+                                       ["aggregatedDailyCounty",
+                                        "clusterInfo"],
+                                       {
+                                        "initialize": [
+                                                       ("aggregatedDailyCounty", "dailyFromModel"),
+                                                       ("clusterInfo", "clusterInfo"),
+                                                       ("__None", "dyntrim"),
+                                                       ("__None", "_trim")],
+                                        "pause": [
+                                                  ("aggregatedDailyCounty", "stopIter
+====SPLIT====
+from nupic.data.file_record_stream import FileRecordStream
+from nupic.data.matrix_utils import *
+from nupic.frameworks.opf.modelfactory import ModelFactory
+====SPLIT====
+
+  def __modelSnapshotCompleted(self, newModelID, iterationNumber):
+    
+====SPLIT====
+
+    else:
+      n = min(MetricRegression.MINPT, self._METRIC_REGRESSION_NUM_POINTS)
+      if abs(metric - self._metricRegression._windowSum/n) >= 0.01:
+        self._logger.info("Model %d: Revised score = %f", self._modelID, metric)
+
+====SPLIT====
+
+def __scheduleTemporal(self, prams, idToMuidMap, runSet = None):
+    if not prams.dar and not prams.dryRun:
+        events = []
+        earliestEvent = None
+        latestEvent = None
+        for membeRunID in self._p.runList:
+            if not events:
+                nricFile = RNIConsult(self._umbCredit.name, membeRunID,
+                                     self._p.modelHrn).ducFile
+                if not nricFile.exists():
+                    raise
+====SPLIT====
+
+swarmCount = 0
+for k in self._state['sprints'][-1]['perms'].iterkeys():
+  if self._state['sprints'][-1]['perms'][k]['status'] == 'completed':
+    swarmCount += 1
+  else:
+    break
+print 'Swarm count: ', swarmCount, ' swarm limit: ', self._swarmLimit,
+       ' sprints: ', len(self._state['sprints']),
+       ' best SDR size: ', self._state['sprints'][-
+====SPLIT====
+
+  def step(self, completionStep=None):
+    if self._canceled:
+        self.logger.warning((
+            "Hypersearch was canceled externally. Leaving the outermost "
+            "Hyperseach job loop and waiting for results from remaining "
+            "models"
+        ))
+        return False
+====SPLIT====
+
+  def updateStatus(self, searchId=None, points=None):
+    
+====SPLIT====
+
+class FPBTreePrinter(BTreePrinterFA):  
+====SPLIT====
+
+  def checkStalledCompletingSwarms(self):
+    swarmIds = self.getCompletingSwarms()
+    stuckSwarmIds = []
+    if swarmIds:
+      now = time.time()
+      for swarmId in swarmIds:
+        info = self._state['swarms'][swarmId]
+        if now > (info['completionStatus']['lastestUpdateTime'] + (4 * 60 * 60)):
+          stuckSwarmIds.append(swarmId)
+    return stuckSwarmId
+====SPLIT====
+
+====SPLIT====
+        for id in self._state['swarms']:
+          if self._state['swarms'][id]['status'] != 'completed' :
+            PIDs = os.listdir('/proc')
+            for PIDnum in PIDs :
+              entry = open('/proc/'+PIDnum+'/stat').readline()
+              if 'swarm-'+str(id) == entry[entry.find('(')+1:entry.find(')')] :
+                os.system('kill -9 '+PIDnum)
+        self._state
+====SPLIT====
+
+  def pab(self,description=None,type=None):
+    now = datetime.datetime.now()
+    year,month,day = now.year,now.month,now.day
+    hour,minute,second = now.hour,now.minute,now.second
+    if description is None:
+      description = u"%(type)s:%(year)s-%(month)s-%(day)s/%(hour)02d.%(minute)02d.%(second)02d"% vars()
+====SPLIT====
+
+  def _broadcastActivity(self, event, eventPayload):
+    
+====SPLIT====
+
+
+====SPLIT====
+
+class LemurSpecDB:
+  def __init__(self):
+    
+    
+====SPLIT====
+
+<DEBUG:node-command>
+<DEBUG:node-parameter>
+<DEBUG:node-input>
+<DEBUG:node-output>
+====SPLIT====
+
+if __name__=="__main__":
+  
+  resultDicts = json.loads(modelSelectionResults)["resultArray"]
+  jobResult = NupicJobResult(resultDicts)
+  bestMetric = jobResult.getBestMetric()
+      
+
+====SPLIT====
+
+FieldMetaType.scalar, FieldMetaType.datetime, FieldMetaType.string
+
+====SPLIT====
+
+def pyJsonModelElementHandler(modelSpec):
+  assert isinstance(modelSpec, dict), "expected dict: %s" % typename(modelSpec)
+  assert len(modelSpec) == 1, "Unexpected element number: %d\nElements: %s" % (
+      len(modelSpec), modelSpec)
+====SPLIT====
+
+def matchReportKeys(reportKeyREs=[], customErrors=None):
+  
+    This function is extracted from the class method 'matchKeys' so that it has a greater
+    chance of appearing in the JVM stack for an invocation.
+====SPLIT====
+
+example : 'Users.Administrator'
+Will return an item in results['Users']['Administrator']
+====SPLIT====
+
+  while True:
+    print "\nrestarting model: %s in experiment %s (autosaveName: %s; "\
+          "maxOutstandingModels: %s)" % (str(modelID), experimentName,
+          autosaveName, str(maxOutstanding))
+    retVal = True
+    try:
+      
+====SPLIT====
+
+def runModelGivenFlagsAndDir(modelID, jobID, baseDescription, params,
+                             predictedField, reportKeys, optimizeKey, jobsDAO,
+                             modelCheckpointGUID, logLevel=None):
+====SPLIT====
+
+constMarkers = [
+ m.TODO,
+ m.FIXME,
+ m.NOTE,
+ m.OLD,
+ m.SOON,
+ ]
+====SPLIT====
+
+-r --raises (or --raise) raise errant regex
+-m --match regex
+-f --forward regex,vars map
+-b --back regex,var map
+-l --lower-partial
+-u --upper-partial
+-e --escape-escape-sequence
+-i --ingore [set]
+-v --variable map
+-n --noise whitespace to be replaced with a space on delimiting.
+-r --recursive (raise errant on children)
+-c --count number of items before stop (c, count)
+-x --
+====SPLIT====
+
+if __name__ == '__main__':
+  a = dict()
+  a[None] = 12.
+  b = dict()
+  b[1] = 1.
+  b[2] = 2.
+  b[3] = 3.
+  c = dict()
+  c['a'] = a
+  c['b'] = b
+  print clippedObj(c)
+
+====SPLIT====
+ 
+Information value
+
+====SPLIT====
+
+====SPLIT====
+
+Preprocessers used for many of the JSON files used in Donut.
+
+====SPLIT====
+ "TEMP" 
+====SPLIT====
+
+import numpy as np
+====SPLIT====
+
+_cls_info = {
+    "base": IdentityTransforms,
+    "description": "An identity region.",
+    "readOnly": True,
+}
+====SPLIT====
+
+import numpy.random as npr
+====SPLIT====
+
+  @classmethod
+  def _classifySensorPattern(cls, categoriesMaxLow,
+      categoriesMaxHigh, categoriesSmoothedLow,
+      categoriesSmoothedHigh, recordNum, uiCommand=None,
+      knownPredictedValues=None,
+      learningVerbosity=0, learningMethod=cls.learningMethod,
+      useCache=True, imputeStart=False,
+      maxRecords=None, startState=None):
+====SPLIT====
+
+from collections import defaultdict
+anomalyRecordsBySensorAndType = defaultdict(list)
+for record in anomalyRecords:
+  anomalyRecordsBySensorAndType[
+      (record.sensorName, record.anomalyLabel[0])].append(record)
+
+====SPLIT====
+
+def persist(svm, filename, directory=PersistenceMixin.getTmpDir(), version=None):
+  version_filepath = join(directory, 'version.txt')
+====SPLIT====
+
+====SPLIT====
+
+    @addColumnHashIndex
+    def anomalyLabelColumnHashIndex(record):
+      return {'AnomalyLabel': 3}
+====SPLIT====
+
+Anomaly Reporter
+====SPLIT====
+
+timeseries = numpy.array([0,1,2,5,6,9])
+historyLength = 20
+model = Autoencoder(historyLength)
+model.compute(timeseries)
+====SPLIT====
+
+def logEntropy(x):
+    res = 0
+    while x >= 1:
+        x /= 2
+        res += -1 if x == 1 else ((x/2)*math.log(x/2))+(-(x-1)/2)*math.log((x-1)/2)
+
+====SPLIT====
+  
+     elif self.SpatialClass == spr.PySTCM:
+      self._sfdr = spr.PySTCM(
+        columnDimensions         = [self.columnCount],
+        inputDimensions          = [self.inputWidth],
+        potentialRadius          = self.inputWidth,
+        stateful                  = True,
+        globalInhibition         = True,
+        seed                      = 12345,
+        frequencies              = np.ones((self.columnCount,)),
+        overlapping               = True,
+        wrapAround               = False,
+        pointDensity
+====SPLIT====
+
+====SPLIT====
+  
+  def flood_blur_inhibition(self,matrix):
+    inhibition_radius = int(self._spatialParams['inhibitionVel'])
+    blur_radius = int(inhibition_radius * 3.0/4.0)
+    size = matrix.shape[0]
+    
+====SPLIT====
+
+  def __getstate__(self):
+    print "HERE*************"
+    state = self.__dict__.copy()
+    
+====SPLIT====
+
+    def _getSequenceInfo(self, inputRecord):
+      result = None
+====SPLIT====
+
+class TemporalMemoryEvaluator(object):
+  def __init__(self, numberOfCols=500, cellsPerCol=16,
+               initialPerm=0.5, connectedPermanence=0.50,
+               minThreshold=8, newSynapseCount=15,
+               permanenc
+====SPLIT====
+
+
+====SPLIT====
+
+class TemporalMemoryInferenceNode(TemporalMemoryNode):
+  
+====SPLIT====
+
+TF is Tensorflow code (TFDR= Tensorflow DR)
+numpy types to Tensorflow types.
+Better to use None instead of the below.
+
+====SPLIT====
+
+
+====SPLIT====
+
+Code Example 1.7
+File: ../samples/anomaly_001.py
+Generates sample anomaly score set and prints to standard output.
+
+====SPLIT====
+
+NetCDF 4 data model:
+====SPLIT====
+
+====SPLIT====
+ I have been using this code just to visualize the pin plane by plane 
+====SPLIT====
+
+plt.figure()
+rpmset = vts.strip_rpm_data(vts.get_rpm_data())
+plt.subplots_adjust(0.01, 0.01, 0.99, 0.99)
+plot_rpm = vts.plot_subplots(3, 2, 11, 12)
+plot_rpm[1].hist(rpmset["x"], rpmset["bins"], histtype="bar", normed=True,
+                 color="cyan")
+plot_rpm[1].set_
+====SPLIT====
+
+try:
+  BRANCH or BRANCH or getBranch() or "branches/unknown"
+except:
+  BRANCH = "branches/unknown"
+  
+
+====SPLIT====
+if not nupicBindingsPrereleaseInstalled():
+  dataFiles.append(
+    ('nupic/frameworks/opf/clients/python/model_interfaces', [
+      'src/nupic/frameworks/opf/clients/python/model_interfaces/__init__.py',
+      'src/nupic/frameworks/opf/clients/python/model_interfaces/classification_model.py',
+      'src/nupic/frameworks/opf/clients/python/model_
+====SPLIT====
+
+def findRequirements():
+  requirementsPath = os.path.join(ROOT_DIR, "requirements.txt")
+  requirements = parse_file(requirementsPath)
+====SPLIT====
+ 
+________ _   _  _____ _____ _   _  _____ ___________ _   ______
+|  ___\ \ | | / ____/ ____| \ | |/ ____|  ___|  _  \ | | |  _  \
+| |_   \ \| | | |   | |    |  \| | |  __| |__ | | | | | | | | | |
+|  _|   \ | | | |   | |    | . ` | | |_ |  __|| | | | | | | |
+====SPLIT====
+
+  _alertPredictedField = 'predictedColumnName'
+====SPLIT====
+
+def _loadConfig(configFileName):
+  configFile = open(configFileName)
+  r = re.compile("(\\w+)\\s*=\\s*([\\w/]+);")
+  configs = {}
+  for l in configFile:
+    g = r.match(l).groups()
+    print "Loading ", g
+    configs.update({g[0]:g[1]})
+  return configs
+
+====SPLIT====
+
+  if schema['type']['required'] is not None and propertyName not in schema['type']['required']:
+    options[propertyName] = None
+
+====SPLIT====
+
+cat = irm.FromData(chain = Chain(), 
+                   model=model.BetaBernoulliNonConj(), 
+                   data =
+                   {'relations' : relationsData,
+                    'domains' : domainsData})
+
+====SPLIT====
+
+  if 'aggregation' in options:
+    capabilitiesForSpec.append(\
+      {'name': 'NTAggregationFieldCapability',
+       'params': options['aggregations']})
+====SPLIT====
+
+  
+====SPLIT====
+
+  if options['outputDataset'] == options['predictionOutputDataset']:
+    tokenReplacements['\$OUTPUT_SOURCE'] = tokenReplacements['\$INPUT_SOURCE']
+    tokenReplacements['\$OUTPUT_DEST'] = tokenReplacements['\$INPUT_DEST']
+  else:
+  
+====SPLIT====
+
+  elif options.addExp:
+    _handleAddExpOption(options.addExp)
+====SPLIT====
+
+def parseBradford(s):
+  s = s.strip()
+  conditions = s.split()
+  if len(conditions)!=3 or\
+    conditions[1].lower()!='and' or conditions[2].startswith('that') or len(s)<17 or\
+    s.replace(',','').replace('.','').replace(':','').isalpha():
+    raise ValueError('The provided bradford conditions "%s" are not valid. '
+                     'Should be X and that Y by Z.' % s)
+
+====SPLIT====
+
+====SPLIT====
+
+Used in toolTaggedTxt
+Unused.
+
+====SPLIT====
+
+====SPLIT====
+
+import matplotlib
+from matplotlib.pylab import plot, imread, imshow, show, figure, draw
+from numpy.fft import fft2, ifft2, fftshift, ifftshift
+====SPLIT====
+Answer: Given an index and dimensions of tensor, we can find element coordinates at that index 
+====SPLIT====
+
+We want to be able to come up with a sequence to evaluate the given formula.
+====SPLIT====
+
+Try the neighborhood function.
+Trying to figure out how this is working.
+
+====SPLIT====
+-------------------
+====SPLIT====
+
+Try to figure out how do feature maps look for the two datasets under
+1) same metric, 2) different metric, 3) sampling
+
+====SPLIT====
+
+if __name__ == '__main__':
+    import inspect
+    print "Test the attributes, arguments, and doc strings with the "
+    print "inspect module.\n"
+    
+====SPLIT====
+
+
+====SPLIT====
+
+Compute a hash of the given coordinate.
+
+====SPLIT====
+
+https://www.geeksforgeeks.org/binary-search/
+ Binary Search:
+  Search a sorted array by repeatedly dividing the search interval in half.
+  Begin with an interval covering the whole array. If the value of the search key is
+  less than the item in the middle of the interval, narrow the interval to the lower half. 
+  Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+
+====SPLIT====
+
+Key=data wrapped by the Region
+(cell, segment): (col, cumStartRow, cumEndRow, data)
+and so the collections must look like
+set([(cell, segment), (cell, segment)])
+and the Content
+{(cell, segment): List(key)}
+
+====SPLIT====
+
+from collections import namedtuple
+from numpy import random as nprnd, uint32 as npuint32
+DataPoint = namedtuple("DataPoint", ["r0", "r1"])
+dps = []
+for i in range(1000):
+  dp = DataPoint(nprnd.randint(10), nprnd.randint(10))
+  dps.append(dp)
+====SPLIT====
+
+class SynapsesForPresynapticCellIter(object):
+  
+====SPLIT====
+
+ if len(synapse.segment._synapses) == 0:
+ self._segmentDestroyed(synapse.segment)
+
+====SPLIT====
+
+segmentForCell = {}
+for cell in cellsForSegment:
+  for segment in self.segmentsForCell[cell]:
+    if segment.flatIdx not in segmentForCell:
+      segmentForCell[segment.flatIdx] = segment
+
+====SPLIT====
+  
+  def stimPartner(self, idx_pre, idx_post):
+    return len([seg for seg in self._idx_to_seg[idx_pre].recv_from_synapses_
+           if seg.idx == idx_post])
+ 
+====SPLIT====
+
+  def __setstate__(self, state):
+    
+====SPLIT====
+
+def loadRbacConfig():
+  import logging
+====SPLIT====
+
+Setup constants used throughout WHAM code
+
+====SPLIT====
+
+def toString():
+  all_keys = self.all_keys.split(';')
+  new_keys = ""
+  for key in all_keys:
+    new_keys += "; " + key + "=" + self.getProperty(key)
+  return new_keys  
+
+====SPLIT====
+	 
+Filename = "CommonSettings.py"
+import re
+pattern = re.compile("(\w+)\s*=\s*([']?\w+[']?)\s*(
+====SPLIT====
+
+import re
+import logging
+import os
+import os.path
+import socket
+import subprocess
+import sys
+import tempfile
+import string
+import platform
+import xml.etree.ElementTree as ET
+def __get_proc_version(cls, proc_xml):
+    
+====SPLIT====
+
+  MetricsMgr is for managing Metrics collectors. This base class will allow for
+  specialized collectors to interact with the service and [startSelfMonitoring()]
+  method (although not all of them can, just those that understand the ...).
+  It is not intended to be used by itself.
+
+====SPLIT====
+input = numpy.random.random((8,8)) * 255
+for noise in [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7]:
+  print noise
+  h, w = input.shape
+  im = LabelImage()._addNoise(input, noise, True, True)
+  im.resize(h, w, Image.NEAREST).show()
+  sys.stdout.flush()
+====SPLIT====
+
+[np1]% tmux attach -t mcs_1x32_orh_oc-13
+reshape: shm_region_872287265.
+[test_bw-2 wcphf-obs]% python /home/charles/SMCodeBase/Python/Scripts/mcs_unit_test.py 
+Erasing linked file test_results-2013-01-14-163757/Transpose_mcs_1x12_orh_oc.sqlite
+Testing time for setRowFromSparse... <
+====SPLIT====
+
+  Build a sparse matrix representation of a coincidence list.
+====SPLIT====
+  
+seqNumberOfSpikes = np.sum(sequence, 0)
+nSpikesPerbCoinc2 = 25*seqNumberOfSpikes
+boxesPerbCoinc = 50*seqNumberOfSpikes
+
+====SPLIT====
+
+coincNumbers = range(10)
+occurr = {}
+seq = map(str, generateHubSequence(10, [2,6]))
+
+====SPLIT====
+
+  from L1.L1 import createL1
+  coincidences = None
+  
+====SPLIT====
+
+if __name__ == "__main__":
+    
+    
+====SPLIT====
+
+a = getConfig(tmOne=False, apical=False)
+a = convertToBaseConfig(a)
+a = convertToAllConfigs(a)
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+if __name__ == "__main__":
+  import supriya, supriya.graphios
+  supriya.log.priority_level = supriya.log.DEBUG
+  server = supriya.Server(8011)
+  server.boot()
+====SPLIT====
+def _rectifyAndComputeDurations(indexLists):
+  
+  
+  
+  def _rectifyHoloActFun(patternAct):
+    
+====SPLIT====
+
+  
+====SPLIT====
+
+def poolOverlap(inputVec, outputVec, numClusters=None, conf=CONF):
+  
+====SPLIT====
+
+  
+====SPLIT====
+
+
+====SPLIT====
+
+  Calculate how many elements are different in either the powerup or steady state.
+  Find the best window out of many choices.
+
+====SPLIT====
+
+
+====SPLIT====
+
+parmDict = {
+      "learningRate": 0.001,
+      "batchSize": 2,
+      }
+from encoders_decoders import LSTMEncoderDecoder
+encoder = LSTMEncoderDecoder(parmDict, encodeVars=varDicts)
+encoder.xAndLabelsShape()
+encoder.defineNetwork()
+encoder.getTopology()
+encoder._SeqEncoderBase__trainingLoss()
+
+====SPLIT====
+
+shape = invalidSpatialSourceGeometry[(2,2)]
+spreadShape = minSpatialDistanceToSpreadCells[(2,2)]
+offsets, _ = getCentreAndSpreadOffsets(shape, spreadShape)
+====SPLIT====
+
+The code above is used to define how many times to repeat each input segment
+in each of the two dimensions (row and column) in the input. In an image, the
+input space is divided into numColumns columns by numRows rows. (We need to
+tell us code how many columns and rows to cut the image into). The code
+images.abstractImageSource.py divides the input into numColumns and numRows
+and saves matrix called inputImageArray. This matrix has rows x numRows and
+columns x column. For example, a black and white image of size
+====SPLIT====
+
+def numpyStr(array, format='%f', includeIndices=False, includeZeros=True):
+  assert (len(array.shape) <= 2)
+  connector = ' '
+  empty = ''
+  if len(array.shape) == 1:
+    if includeIndices:
+      format = '%d:' + format
+      if includeZeros:
+        rowItems = [format % (c,x) for (c,x) in enumerate(array)]
+      else:
+        rowItems = [format % (c,x) for
+====SPLIT====
+
+mssg2 = 'Too few reads in test set to make a precision recall curve'
+if valid_dist.sum < 10: 
+    print( mssg2 )
+else:
+    
+====SPLIT====
+
+
+====SPLIT====
+
+Dual Stochastic Optimal Learning using fmin_l_bfgs_b.
+
+====SPLIT====
+
+linkType = "UniformLink"
+linkParams = ""
+srcOutput = network.regions[sensorRegionName].getSelf().outputs["dataOut"]
+destInput = network.regions[regionName].getSelf().inputs["bottomUpIn"]
+link = createLink("link", linkType, linkParams, srcOutput, destInput)
+network.addRegion("link", link)
+
+====SPLIT====
+
+from nupic.bindings.engine import Network
+from nupic.bindings.engine import Region
+from nupic.regions.MultiEncoderRegion import MultiEncoderRegion
+from nupic.regions.SPRegion import SPRegion
+from nupic.regions.TPRegion import TPRegion
+from nupic import encoding
+====SPLIT====
+
+Now that we've created a network and read in the data source, we're ready
+to train it and make classifications.
+
+====SPLIT====
+
+StructureEncoderInput = SparseAutoencoder
+encoder = StructureEncoderInput.getSelf()._getEncoder()
+numColumns = StructureEncoderInput.getSelf()._numColumns
+====SPLIT====
+Example of running a SWARM prediction of Electric load.
+====SPLIT====
+
+    
+====SPLIT====
+
+from nupic.encoders.base import defaultDtypeStr
+====SPLIT====
+
+class JobFetchError(Exception): pass
+====SPLIT====
+
+w.worksheet('googleMap')
+kmlLinkTemplate = '<a href="https://maps.google.com/maps?q=%s+&ll=%s,%s&spn=0.2,0.2">kml</a>'
+links = [ kmlLinkTemplate.replace('%s',
+  str(f[1])).replace('%s', str(f[2])) for f in data]
+unused_sym = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+
+====SPLIT====
+
+      if self.verbosity>3:
+        print 'Individual integration times:'
+        for k in sorted(record.integrationPortion.keys()):
+          print '%27s' % k,': ','%.3f' % record.integrationPortion[k]
+      try:
+        del record
+      except:
+        pass
+
+====SPLIT====
+
+    Rather than having multiple tables of columns (where each column is a feature), I will have a single table
+    with columns as time values and rows as functions of the time-dependent quantities being analysed. 
+
+====SPLIT====
+
+parser = FileParser(f, None)
+zeroOffsetHeader = parser.getAllRecords()
+header = Header(*zeroOffsetHeader)
+print(header)
+
+====SPLIT====
+
+    Please change the code so that:
+    - You ask the user for a key and the type and value of the value to
+      add instead of using the known Integer key 4 and the known tuple ("foo",)
+
+====SPLIT====
+for p in P:
+    print(p) 
+====SPLIT====
+
+encoding = np._concatenate(
+    () if field.isPredictedField  else field.encodings[n] 
+    for field in self.fields)
+====SPLIT====
+
+====SPLIT====
+
+class Glocals(object):
+  def __init__(self,class_):
+====SPLIT====
+
+from unionLengths import UnionLengths
+from lengthEncoding import LengthEncoding
+uniongrammar2 = UnionLengths([
+    LengthEncoding(2.0,groupingCost=0.0),
+    LengthEncoding(2.0,groupingCost=500.)
+],groupingCost=500.)
+uniongrammar2.completionTime
+
+====SPLIT====
+
+    for i in range(len(self.fields)):
+        field = self.fields[i]
+        if field.inactiveEnc:
+            for enc in range(field.activeEncIndex):
+                self.fields[i].encodings[enc]=inactiveEncodings[i]
+        elif field.activeEnc.type=='octal':
+            for enc in range(field.activeEncIndex):
+                self.fields[i].encodings[enc]=\
+obj.convertDecLikeStringToRBS(enc)
+
+====SPLIT====
+
+if __name__ == '__main__':
+  
+====SPLIT====
+
+def main(args):
+  
+  
+====SPLIT====
+What does this do.
+====SPLIT====
+
+====SPLIT====
+
+  if (encoderType=='datetime') and (resolution is not None):
+    self.encoder=date.DateEncoder(name='dateEncoder', resolution=resolution)
+  elif dataType:
+    raise RuntimeError \
+      ('dataType is deprecated and dateEncoder resolution parameter should be used instead')
+    assert False
+====SPLIT====
+
+def loadThings(path, nesterov_momentum=False):
+  if 'modelDescription' in dir(nexp):
+    return loadExperimentDescription(nexp, nesterov_momentum)
+  if 'model' in dir(nexp):
+    return loadExperimentOld(nexp, nesterov_momentum)
+
+====SPLIT====
+
+instance = ExperimentDescription.create(loadExperimentDescriptionScriptFromDir(SCRIPTROOT))
+print instance
+
+====SPLIT====
+
+  def _loadDeviations(mod):
+    if not hasattr(mod, "deviations"): return
+====SPLIT====
+
+      
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+    def getResultCStates(self, modelID):
+====SPLIT====
+
+def printModelInfoToFile(filename):
+  fid = open(filename,'w')
+  count = 1
+  max_multiples = 15 
+====SPLIT====
+------------------------------------------------------------------------
+  @class Experiment
+------------------------------------------------------------------------
+====SPLIT====
+
+
+====SPLIT====
+
+    def checkInputParamsDead(self, inputParamsToCheck):
+      inputParams = copy.deepcopy(inputParamsToCheck)
+      
+====SPLIT====
+
+  def _warmupPersistentMessages(self):
+    
+====SPLIT====
+
+from nupic.frameworks.opf.modelfactory import ModelFactory
+from model_types.dirichlet_encoder import DirichletEncoder
+from model_types.keywords_encoder import KeywordsEncoder
+from model_types.keywords_sensor import KeywordsSensor
+from model_types.keywords_encoder import KeywordsEncoder
+from nupic.research import fdrc_adjust
+from datetime import datetime
+from sklearn import metrics
+from model_factory import ModelFactory
+from model_encoder_utils import Long
+====SPLIT====
+      if isinstance(e, exceptions.KeyboardInterrupt):
+        jobsDAO.modelSetCompleted(modelID,
+                                    completionReason = jobsDAO.CMPL_REASON_ABORTED,
+                                    cpuTime = time.clock() - cpuTimeStart)
+====SPLIT====
+
+def _getVersion():
+  
+====SPLIT====
+
+  expRunner = ExerimentsRunner(outDir, outputLabel)
+====SPLIT====
+
+====SPLIT====
+
+if (__name__ == "__main__"):
+  source = sys.argv[1]
+  dest = sys.argv[2]
+  copy = sys.argv[3]
+====SPLIT====
+
+if __name__ == '__main__':
+  client = _clientJobsDB().getClient()
+  modelID = "458b4265-5801-4f08-b146-84329e130728"
+  modelInfo = ModelInfo(client=client,id=modelID)
+====SPLIT====
+
+    except RuntimeError, e:
+      sys.stderr.write('ERROR: %s\n' % str(e))
+      sys.exit(1)
+
+====SPLIT====
+
+def _setUpExports(exports):
+  cmdLine = ""
+  for val in exports:
+    if val.find("PATH") >= 0:
+      cmdLine += "export %s\n" % (val)
+====SPLIT====
+
+  def __generateJobID(cls, expID, outputLabel, permWorkDir)
+    
+====SPLIT====
+
+    def __loadLatestHyperSearchJobID(self, permWorkDir, outputLabel):
+        filePath = self.__getHyperSearchJobIDFilePath(
+            permWorkDir = permWorkDir,
+            outputLabel = outputLabel,
+        )
+        with open(filePath, "rb") as jobIdPickleFile:
+            d = pickle.load(jobIdPickleFile)
+        return d["hyperSearchJobID"]
+
+====SPLIT====
+
+class LockedPrint:
+  def __init__(node, *args):
+    self.lock = threading.Lock()
+  def print(*args):
+    self.lock.acquire()
+    pprint.pprint(*args)
+    self.lock.release()
+
+====SPLIT====
+
+def __createTempDirectory():
+    
+====SPLIT====
+
+  def emitResults(self, results):
+    
+====SPLIT====
+Does not appear to be used at the time of writing this comment.
+
+====SPLIT====
+
+  @classmethod
+  def checkForNeedingToSpawnCoordinator(cls, searchOptions):
+    if searchOptions == None:
+      return False
+====SPLIT====
+
+import traceback
+====SPLIT====
+ 
+====SPLIT====
+
+    for index, (iteration, predicate) in enumerate(((1000, PredicateFactory.exceedsThreshold(self._maxLocalScore)),(10000, PredicateFactory.stalled(10))), len(ModelTerminator._MILESTONES)):
+      activity = functools.partial(terminationFunc, index=index)
+      activity = PeriodicActivityRequest(period = iteration,
+                                         cb=activity)
+      activity.condition = predicate
+      activities.append(activity)
+
+====SPLIT====
+
+cn=CsvReporter('/home/local/BIDMC/chrashawn/Desktop/Benchmarks/test/testOutput', 'testCSV')
+====SPLIT====
+
+Anything you wish to have easy and custom access to.
+example, userpattern is just going to be the number
+associated with their pattern...
+
+====SPLIT====
+
+def seq_to_golomb(seq, bins, threshold = 0.):
+  
+  Returns the Golomb code of sequence 'seq' using quantizer 'bins',
+  requiring the Kullback-Leibler distance to be less than 'threshold'
+  (default 0. for exact Golomb code). Mathematically, is equivalent to
+  'ie.code_golomb(bins, seq, threshold)'.
+====SPLIT====
+
+  Let's add a method to find patterns based on the inputted number. As you can
+  see, this code is identical to the one used to generate the initial numbers.
+  To maintain the DRY principle, this function could have been used by both the
+  constructor and this function, but then it would have had to know about the
+  exception I'm raising, and the data structure that it populates. It just felt
+  'odd.' However, I'm all for refactoring. 
+
+====SPLIT====
+
+This is used to extract the information of the numbers with circle on the 
+graph. The top code is to
+====SPLIT====
+
+semigraphings_categorical for model.py
+
+====SPLIT====
+
+print ""
+w1=3
+w2=5
+a=nMax(50, 30000)
+pat1=a.generate(w1)
+print "w={0}".format(w1)
+for item in pat1:
+  print item
+pat2=a.generate(w2)
+print "w={0}".format(w2)
+for item in pat2:
+  print item
+emo = Emotion()
+emo.printPattern(pat1[0])
+emo.printPattern(pat2[0])
+print ""
+
+====SPLIT====
+
+  def _getContext(self, source, numBits):
+    
+====SPLIT====
+
+for i in xrange(patterns_generator._n):
+  print ','.join("%.0f" % n for n in (numpy.random.randn(patterns_generator._m) + 1.0) * 0.5)
+
+====SPLIT====
+weightList = []
+for i in range(weightMatrix.shape[1]): weightList.append(numpy.random.rand(weightMatrix.shape[1]))
+wIndex = 0
+weightMatrix[vectorIndex[wIndex]] = weightList[wIndex]
+====SPLIT====
+
+class TestMPF(unittest.TestCase):
+====SPLIT====
+
+def unique(filename):
+  global _options
+  assert filename.endswith(CompressedSuffix)
+  tempfile = filename[:-len(CompressedSuffix)] + ".unique"
+====SPLIT====
+
+from . import mathHelpers as _mathHelpers
+import os as _os
+====SPLIT====
+a = {'num_staging_to_rechunk_at': 49,
+'num_chunks_per_slice': 50,
+'delete_staging_after_processed': True,
+'rechunk_if_needed': True,
+'ignore_bad_chunks': False,
+'auto_manifest': True,
+'current_chunk_num': 0,
+'ignore_empty_lines': True,
+'total_bytes': 12292698627L,
+'bucket': 'dask-test-records-sorted
+====SPLIT====
+
+    if self.verbosity >= self.PREDICTIONS:
+      print "predictions (bottom-up): \t%r" % self.predictiveCells
+====SPLIT====
+def cPrint(self, level, message, newline=False, *args, **kw):
+    if level > self.consolePrinterVerbosity:
+      return
+      
+    newline = kw.get('newline', False)
+    if not newline:
+      print message % args,
+      return
+    
+    try:
+      print message % args
+    except:
+      print "cannotPrint"
+
+====SPLIT====
+
+Код следующий не предназначен для использования будет использоваться для тестов.
+В качестве входных параметров пр
+====SPLIT====
+
+    temporary hack for tetris to slow its speed
+    
+====SPLIT====
+
+====SPLIT====
+
+`
+import urllib
+====SPLIT====
+
+def dropModel(self, preserveCheckpoints=True):
+  
+====SPLIT====
+
+print 'Creating AnomalyMinMax object...'
+minMaxNormalizer = obj.create(Obj.AnomalyMinMax).getSelf()
+====SPLIT====
+
+  def addSpectrum(self, spectrumId, spectrumObj):
+    
+====SPLIT====
+
+    
+====SPLIT====
+
+@run_and_log_exceptions
+def incrementPendingSDR(self, delta=1):
+  if self._getRegion() is not None:
+    self._getRegion().incrementPendingSDR(delta)
+====SPLIT====
+
+print "Removing results with low precision..."
+newCellsDeletedLikelihoods = _removeUnlikelyPredictions(
+  newCellsDeletedLikelihoods,
+  fedm.INSTANCE.options.threePhaseValidCellMinLikelihoodThreshold,
+  fedm.INSTANCE.options.threePhaseValidCellMaxPredictionsPerStep
+)
+print "Removing results with low recall..."
+newCellsDeletedLikelihoods = _removeUnlikelyPredictions(
+  newCellsDeletedLikelihoods,
+  fedm.INSTANCE.options.three
+====SPLIT====
+
+  def addInferenceRegion(self, net, *pargs, **kwargs):
+    
+====SPLIT====
+
+_inferenceProfile = dict(
+  spBUInputSize = 32768,
+  tmBUInputSize = 32768,
+  spTDSize = 32768,
+  mInputSize = 0,
+  pInputSize = 0
+  )
+_learningProfile = dict(
+  spBUInputSize = 32768,
+  tmBUInputSize = 32768,
+  spTDSize = 32768,
+  mInputSize = 0,
+inferenceProfile = None
+if inferenceProfile is not None:
+  self._netInfo.net.setParameter
+====SPLIT====
+
+def __getResultsPerChoice(self):
+  
+====SPLIT====
+
+        if self.inferenceEnabled:
+          if streamOut is not None and streamOut.isEnabled() and \
+                 streamOut.streamID is not None:
+====SPLIT====
+
+  def synchronize(self):
+    for name in self.__metricData.iterkeys():
+      self.__metricData[name].synchronize()
+
+====SPLIT====
+
+  @Override
+  public String[] getInferenceArgsFiles(InferenceElement inferenceElement,
+                          BucketingOuputs bucketingOutputs) {
+    String _fileName = "data/unsupervised_templates/pretrained_args_5.0-0.5.templates.txt";
+    String auxPath = h2oCpusPythonExtension+"unsupervised_templates/" + _fileName;
+    String finalPath = initPath(inferenceElement) + auxPath;
+    String[] args = new String[]{"-f
+====SPLIT====
+
+experiments = {
+                'fourway_balanced_dropout' :{
+    'train_method': 'fourway',
+    'training_generalization_loss': '',
+    'input_distances': [6],
+    'positive_label': '+1',
+    'save_end_time': 3600,
+    'detailed_summary': False, 
+    'allow_features': ['l2_norm'],
+    
+====SPLIT====
+
+Steve:  I think this code is important for dealing with attributes of objects that are
+        variables of a function (including parameters which are in fact variables).  It
+        has to do with pickling and unpickling the function.  It preserves the values of
+        all attributes that the function owns that are NOT parameters.  Note that this
+        will not preserve any values of attributes owned by variables that are
+        parameters - those need special treatment.
+
+====SPLIT====
+ 
+@begin emptySpikingDualPhaseGenerator_py @desc A simple function to generate a list of
+directly used spikes, imitating neuron spiking 
+@in numRecords @desc An integer representing the number of direct input spikes
+@in numInputs @desc An integer representing the total count of input neurons
+@out directUsedSpikes @desc A 2-D matrix of size numRecords x numInputs
+@out includedInputs @desc An array representing the binary tags of active or non-active
+        neurons. Length of includedInputs is numInputs.
+@
+====SPLIT====
+
+def encodeAndSort(sequence):
+  
+  sortedSequence = 
+====SPLIT====
+
+inputs = []
+outputs = [0]
+inputs.append("0000100010010")
+appendInputWithNSimilarValues(inputs, 2)
+print inputs
+====SPLIT====
+
+  This file is intended as a starting point for freeform
+  experiments with the game.
+====SPLIT====
+
+def createBaseImageSet(inputSpace, size):
+====SPLIT====
+
+====SPLIT====
+
+def runNetwork(network, dataSource):
+  writer = swarming.CSVRecordStream(dataSource.stream)
+====SPLIT====
+
+sls1 = OS_LIF_Spiking_RCM_2005.org.numenta.nupic.network.OS_LIF_Spiking_RCM_2005(_L1_PARAMS_SPATIAL_POOLER)
+tls1 = OS_LIF_Spiking_TPM_RCM.org.numenta.nupic.network.OS_LIF_Spiking_TPM_RCM(_L1_PARAMS_TEMPORAL_MEMORY)
+cs1 = OT_SRRCM_Class
+====SPLIT====
+
+clean('hi ho hi ho')
+
+====SPLIT====
+
+====SPLIT====
+
+import sys, string
+====SPLIT====
+
+  def _addResults(self, results):
+    
+====SPLIT====
+
+loopEndTimestamp = queue.get()
+queue.reset(None)
+inferenceElements.sort()
+for inferenceElement in inferenceElements:
+  inputElementTimestampDict = getattr(self.__currentGroundTruth, inferenceElement.sensorInputElement)
+  inputElement = inputElementTimestampDict[inferenceElement.inputElementTimestamp]
+  result = inferenceElement.getResult(inputElement)
+  loopEndTimestamp = max(inferenceElement.timestamp, loopEndTimestamp)
+  newMainMetrics = self.__addIn
+====SPLIT====
+
+  _sdrMetricSourceSpec = _datasource.MetricSpec()
+  _sdrMetricSourceSpec.classProtocolID = records.SysInfo.CLASSPROTOCOL_MODEL
+  _sdrMetricSourceSpec.classifierFilePath = SdrClassifierFilePath
+  _sdrMetricSourceSpec.inferenceElement = "[Inferred Classifier (n/a - no classifier specified)]"
+  _sdrMetricSourceSpec.description = (
+    "Uses a classifier to classify sensor data records, and
+====SPLIT====
+
+   endPoint - the single output of the input implementation
+   
+              This is intended for diagnosing mismatch outputs 
+              between the result of an sp and the input implementations sink.
+              e.g.
+              if we dont find any mis-matched outputs, then everything should
+              resume to normal.
+   modelResult - the result of what the sp thought it was receiving
+              likewise, modelResult can be used to determine which 
+              cell was mis-classified. By computing the inferences of the each
+              cell 
+====SPLIT====
+
+if __name__ == "__main__":
+  if len(sys.argv) > 1:
+    filename = sys.argv[1]
+  else:
+    filename = "extraData/gym/recCenter100m.csv"
+  if filename.startswith("~"):
+    filename = os.path.expanduser(filename)
+  else:
+    filename = resource_filename("nupic.datafiles", filename)
+  print "*"*40
+  print "Collecting statistics for file:'%s'" % (filename
+====SPLIT====
+
+a = np.array([1, 1, 1, 2, 2, 2])
+====SPLIT====
+
+cs = "Close Signal"
+cu = "Confirm Signal"
+po = "Pop Signal"
+ps = "Pull Signal"
+sr = "Spike Reverse Signal"
+sp = "Spike Signal"
+a = 'AbbeNormal Automaton'
+
+====SPLIT====
+
+    @classmethod
+    def _setSystemDatasource(cls, datasource):
+      cls.systemDatasource = datasource
+    
+    @classmethod
+    def getSystemDatasource(cls):
+      return cls.systemDatasource
+
+====SPLIT====
+
+  def _initClientJobNotifyTable(self, cursor, deleteOldVersions=False, 
+                                recreate=False):
+    
+====SPLIT====
+ 
+self._equalRowRegEx = re.compile(r'^\(((?:'.join([
+  r'(?P<k%d>\w+\s+[^,=]+)\s*(?:,|=\s*\S+|$)' % i for i in
+  xrange(len(tableInfo.primaryKeySequence))]) + ')?\))')
+matches = self._equalRowRegEx.match(query).groupdict()
+selections = {}
+for k,i in matches.iteritems():
+  if
+====SPLIT====
+
+  def _getMatchingRowsNoRetries(self, tableInfo, conn, fieldsToMatch,
+                                selectFieldNames=None, maxRows=None):
+    assert selectFieldNames is None
+    
+    curs = conn.cursor()
+    tableName = dbApi.SqliteApi.getTableNameFor(curs, tableInfo)
+    if fieldsToMatch:
+      whereClauses = self._getWhereClausesFor(tableInfo, fieldsToMatch)
+    else:
+      whereClauses = ''
+====SPLIT====
+
+def main():
+  import datetime
+====SPLIT====
+
+====SPLIT====
+
+  def jobTriggerStatusWatch(self, jobID, status):
+    
+====SPLIT====
+
+    rows = self._getMatchingRowsWithRetries(
+      self._jobs, dict(status=self.STATUS_RUNNING),
+      [self._jobs.pubToDBNameDict[f]
+       for f in self._jobs.JobDoc()._fields])
+====SPLIT====
+
+  def jobWasCanceled(self, jobID):
+    
+====SPLIT====
+ How do we get this event stuff in to the Info object? 
+    (put back in to have the voms tables defined)
+    Also: ALREADY DEFNED in job_monitoring
+
+====SPLIT====
+ This can problemically be used in the JobManager:
+      if not jobIds or set(runningJobs) == set(jobIds):
+        return True
+====SPLIT====
+
+Granger causality tests.
+====SPLIT====
+
+  @staticmethod
+  def _combineResults(jobRow, jobFields=None, modelFields=None):
+    combinedResult = {}
+====SPLIT====
+
+if False:
+  
+====SPLIT====
+def main():
+  if len(sys.argv) != 4:
+    print "Usage:", sys.argv[0], "<jobs_db_name> <jobs_table_name> " \
+            "<network_location_table>"
+    sys.exit()
+====SPLIT====
+
+  def getJobCommandLine(self, jobID):
+      return self.getJobRecord(jobID)["command_line"]
+  
+  def getJobTarballMD5(self, jobID):
+      return self.getJobRecord(jobID)["tarball_md5"]
+  
+  def getJobTarballInfo(self, jobID):
+      return self.getJobRecord(jobID)["tarball_info"]
+  
+  def setJobTarballMD5(self, jobID, jobTarballMD5):
+      self.set
+====SPLIT====
+
+        if not self.jobSetFields(jobID, {"cancel" : True}):
+            
+====SPLIT====
+
+    r = self._jobGetModel(jobID)
+    if r:
+      return [r['model_id']]
+    return []
+
+====SPLIT====
+
+  def hasClientsWithActiveJobs(self):
+    with ConnectionFactory.get() as conn:
+      query = 'SELECT count(job_id) AS count ' \
+              'FROM %s ' \
+              'WHERE status != %s ' \
+              'GROUP BY client' %  (self.jobsTableName, self.STATUS_COMPLETED)
+      conn.cursor.execute(query)
+      resultCount = conn.cursor.rowcount
+    hasClientsWithActiveJobs = resultCount > 0
+====SPLIT====
+
+if __name__ == "__main__":
+  if len(sys.argv) > 1 and sys.argv[1] == 'log':
+    repo = MetricRepository()
+    print repo.createJob()
+  else:
+    repo = MetricRepository()
+    print repo.getJobsForClientKey(sys.argv[1])
+
+====SPLIT====
+
+  def getJobJidsForJobIds(self, jobIds):
+    
+====SPLIT====
+
+{
+  background:1YIJTs
+  css:@import "http://cyber.law.harvard.edu/css/harvard.css"; select { color: 
+====SPLIT====
+
+import tempfile
+class SsmJsonOutputStream(object):
+  currentOutputFd = None
+  bufferSize = 128 * 1024 
+  handlerEntry = None 
+  offset = None
+====SPLIT====
+
+def tpResetModel(self, modelId):
+  modelRow = self._getMatchingRowWithRetries(
+    self._models, dict(model_id=modelId))
+  self._lock('update', modelRow, self._models)
+  
+====SPLIT====
+
+  def modelsUpdateDead(self, modelId, completionReason):
+    
+====SPLIT====
+
+  def getScript(self, where="", params=None, **kwargs):
+    assert not kwargs, "unexpected keyword arguments in getScript: {!r}".format(
+      kwargs)
+    where, params = where.format(**kwargs), params if params is not None else []
+====SPLIT====
+
+  def verifyModelsFiles(self, modelIDTuples, modelFilePaths):
+====SPLIT====
+
+    def _getMatchingModelIds(self, col, n, nongildedOnly=False):
+        
+====SPLIT====
+
+  def modelAdoptNextOrphan(self, jobId, maxUpdateInterval):
+    
+====SPLIT====
+
+def _gatherProtoDistances(self):
+    
+    
+    
+    
+    
+    
+    First, compute the distances between all prototype
+    pairs: cos(pi - theta)
+    where pi is the angle the ith class
+    
+    
+    
+    
+    
+    
+    
+     Converts row vectors to column form 
+    if behavior.isRowVector(protoScores[0]):
+      rows = len(protoScores)
+      cols = len(protoScores[0])
+      protoScores =
+====SPLIT====
+
+from fcs_sdk.loggers import transparentLoging
+
+====SPLIT====
+  
+    if self._tapBuffer is not None:
+      self._tapBuffer = queue.Queue()
+    if self._tapClear is not None:
+      self._tapClear.put(None)
+      self._tapClear = None
+
+====SPLIT====
+     
+    if self._tapLogger is not None:
+      try:
+        self.log.critical(output[0:-1])
+      except exceptions.Exception, e:
+        
+====SPLIT====
+
+    
+====SPLIT====
+
+    if self._numFolds>1 and \
+       (self._merge > -1 or len(self._prefixOuts)==1):
+      print "Computing leave-one-out crossvalidation sequence accuracy"
+      count = self._l1svm.leaveOneOut(self._xout[:,:-1], 
+                                      self._yout[:,-1])
+      self._accuracy = float(count)/self._yout.shape[0]
+
+====SPLIT====
+
+if __name__ == "__main__":
+====SPLIT====
+
+def _excludeRelatedFields(encoders, toExcludeForms):
+  
+====SPLIT====
+
+tm.*******************************************************************************
+   ***     ***         ***   ***      ***        ***      ******                *
+   * *    * *       *        *  *     *  *      *   *    *                   *    *
+   *  *  *  *      *          *   *   *  **     *     *  *              **       *
+   *   **   *     *         *   *     *   *     *     *  *****    **    ***      *
+   *       *     *         *   ******  *    *   
+====SPLIT====
+
+def sample_by_T(T, q0, max_steps):
+  i = sample_by_distribution(T)
+  if q0[i] == 0:
+    return None
+  for _ in range(r.randrange(max_steps)):
+    i = sample_by_distribution(T[i])
+    if q0[i] == 1:
+      return 
+
+====SPLIT====
+
+Below, we will adjust the matrices W and b,
+starting with a random initial value 
+as we iterate over training sets N times. 
+====SPLIT====
+
+def Rand(min, mz):
+  if hasattr(min, '__iter__'): Random = numpy.random.rand(max-min)+min
+  else: Random = numpy.random.rand(max)+min
+
+====SPLIT====
+
+  if hasattr(pos, '__iter__')
+    
+====SPLIT====
+  
+def rescale(inner, outer):
+  rows = inner.nRows()
+  cols = inner.nVectorElements()
+  outer.resize(rows, cols)
+  outer.rowSums_[:] = 0
+  outer.rowSums_[:] = 0
+  outer.rowSums_[:] += inner.rowSums_
+  for r, rh in inner.enumNonEmptyRows():
+    rh.normalize(outer.rowSums_[r])
+    outer.rowSums_[r] =
+====SPLIT====
+
+cdef class Hist(HistBase):
+    def __init__(self, K, sequence=None, sequenceType=SequenceType.CArray, symOk=False):
+        self.init2(K, sequence, sequenceType, symOk)
+        
+class LazyHist(HistBase):
+    cdef __getitem__(self, idx):
+        if idx<0 or idx>self.K:
+            raise IndexError('LazyHist index out of range')
+        
+====SPLIT====
+
+Usage profile:
+  import meta.function_tools
+  display(HTML(meta.function_tools.spyOnImportPath(
+    globals(),
+    "meta.function_tools"
+  )))
+
+====SPLIT====
+
+
+====SPLIT====
+
+Sentiment for classifying movie reviews as "positive" or "negative" based on the
+text of the reviews.
+The data comes from the website:
+http://www.cs.cornell.edu/people/pabo/movie-review-data
+
+====SPLIT====
+
+>>> stats = libfp_core.pyConfusionMatrixStats_Ordered()
+>>> stats.addInstance(141, 0, result = env.CE_Update)
+>>> stats.addInstance(141, 0, record = env.RECORD_MATCH_ITYPES)
+>>> stats.addInstance(141, 0, result = env.CE_Construct)
+>>> stats.addInstance(145, 1)
+>>> stats.addInstance(12, 0, result = env.CE_Informative)
+
+====SPLIT====
+
+def sentToBit(text):
+    
+====SPLIT====
+
+class Dist(dict):
+  
+====SPLIT====
+
+  def getEncoderList(self, parentFieldName=None):
+    encoderList = []
+   
+    if self.encoders is not None:
+      for (name, encoder, offset) in self.encoders:
+        subList = encoder.getEncoderList(parentFieldName=name)
+        if parentFieldName != '':
+          subList = ["%s.%s" % (parentFieldName, name) for name in subList]
+        encoderList.extend(subList)
+    else:
+      if
+====SPLIT====
+
+  def compute(self, values, dataRow):
+    
+====SPLIT====
+    
+class EncoderBufferWrapper(IBuffer, object):
+  def __init__(self, encoding):
+    self.buffer = embedded_vision.encoder.Buffer(encoding)
+  def addUint8(self, val):
+    self.buffer.add_uint8(val)
+  def addUint16(self, val):
+    self.b
+====SPLIT====
+
+@registerAPI('width')
+def width(self):
+    return self.getWidth()
+====SPLIT====
+
+def bitsToString(bits, fieldcolor=True):
+  result = []
+  for i in xrange(8):
+    if bits[(i*4)+0] or bits[(i*4)+1] or bits[(i*4)+2] or bits[(i*4)+3]:
+      result.append("x")
+      break
+  for i in xrange(8):
+    if bits[(i*4)+0] or bits[(i*4)+1] or bits[(i*4)+2] or bits[(i
+====SPLIT====
+
+How long does it take to encode overriable bit strings?
+====SPLIT====
+
+
+====SPLIT====
+ 
+def main():
+    b = BAM(dimensionArray = [8, 2])
+    b.addRule({'00': ['11000111'], '01': ['11010110'], 
+              '10': ['00111111'], '11': ['00100111']})
+    b.addRule({'0': ['11001100'], '1': ['00111100']})
+    
+====SPLIT====
+
+		self.iterativeReconstruction.inhibitionRadius=self.sp.getInhibitionRadius()
+		self.iterativeReconstruction.desiredLocalActivity=self.sp.getMaxFiring()+0.0000000001
+		self.iterativeReconstruction.percentMinOverlap=self.sp.getMinOverlap()+0.0000000001
+====SPLIT====
+
+class SimpleMKNNClassifier(ClassifierDataSourceMixin,
+                           ClassifierNetworkBuilderMixin,
+                           ClassifierModelProtoMixin,
+                           ClassifierSerializationMixin,
+                           KNNClassifier):
+  
+====SPLIT====
+
+if i == 1:
+      self._insertNewPatternInOrder(pattern1.reshape(1, self.nCells()), cat,
+                                    recommendedRowIndex, partitionId)
+====SPLIT====
+
+def _test():
+    return
+====SPLIT====
+
+LinkedList
+  prev, next
+  size
+  
+====SPLIT====
+
+For unit-testing.
+
+====SPLIT====
+ Printing the closest pattern in a given category
+====SPLIT====
+
+I must have copied this code from another class perhaps a child
+class of a parent claass. I will have to figure out what it is being
+set for.
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+====SPLIT====
+
+    
+====SPLIT====
+
+struct_bbox = np.loadtxt('/home/student/workspace/malaria/data/clean/Annotations/class-1.csv', delimiter=',', dtype='str')
+====SPLIT====
+
+import numpy
+====SPLIT====
+
+  def getMarketData(self, ticker):
+    
+====SPLIT====
+
+  def loadFile(self, path, verbosity=2):   
+    stream = open(path, "rb")
+    reader = csv.reader(stream)
+====SPLIT====
+
+  def backward(self, inputData, outputData, outputErrors):
+    activeOutputIndices = numpy.where(outputData > 0)[0]  
+====SPLIT====
+
+time.sleep()
+f = FileRecordStream(sys.argv[1], continue_past_error=True)
+while True:
+    try:
+        record = f.next()
+        json.dumps(record)
+        
+====SPLIT====
+
+try:
+    field = self._flatFileSchema[i]
+    fieldName = field.fieldName
+    if field.special == DictObj.FIELD_TYPE_STRING:
+      
+====SPLIT====
+
+class StringIOAdapter(object):
+  def __init__(self):
+    self._s = StringIO()
+====SPLIT====
+
+
+====SPLIT====
+
+def longname(filepath):
+  abspath = os.path.realpath(filepath)
+  return abspath[abspath.index(os.environ['CIP_HOME']):]
+
+====SPLIT====
+
+    def listRecords(self, recordOffset=None):
+        records = []
+        if recordOffset == None:
+            recordOffset = self.getBookmark()
+        self.setBookmark(recordOffset)
+        while 1:            
+            record = self.readRecord()
+            if record == '':
+                break
+            records.append(record)            
+        if len(records) > 0:
+            records.pop(0)
+        self.setBookmark(recordOffset)
+        return records    
+    
+    def writeList(self,
+====SPLIT====
+
+      def _updateSequenceInfo(self, record):
+        sequenceId = record[self._sequenceIdIdx] \
+                     if self._sequenceIdIdx is not None else None
+        if sequenceId is not None and sequenceId != self._currSequence:
+          self._currSequence = sequenceId
+====SPLIT====
+ 
+  def storeLastReadEvent(self, bookmark):
+    filepath = os.path.realpath(self._filename)
+    settings = QSettings()
+    d = settings.value('logViewerBookmarks').toDict()
+    if d:
+      settings.value('logViewerBookmarks').toDict()[filepath] = bookmark
+    else:
+      settings.setValue('logViewerBookmarks', 
+                        {filepath:bookmark})
+      
+====SPLIT====
+
+PredictionSDRs = namedtuple('PredictionSDRs', 
+                        ['activeColumns', 'anomaly'])
+====SPLIT====
+
+  
+====SPLIT====
+
+class InferenceGroup(object):
+  def __init__(self):
+    pass
+====SPLIT====
+
+def mapType(inferenceType):
+  if inferenceType == InferenceType.NontemporalClassification:
+      return MLMethodFactory.create("classifier")
+  elif inferenceType == InferenceType.NontemporalAnomaly:
+      return MLMethodFactory.create("anomaly detect")
+  elif inferenceType == InferenceType.NontemporalRegression:
+      return MLMethodFactory.create("predictive")
+  elif inferenceType == InferenceType.NontemporalNextStep:
+      return MLMethodFactory.create("cl
+====SPLIT====
+
+if __name__ == "__main__":
+  def test():
+    t4 = Enum("Color", "Red", "Green", "Blue")
+    t5 = Enum(Cats=1, Dogs=2)
+    t6 = Enum("Label", "Numeric", "String")
+    t5.Cats
+    t6.Label
+  
+====SPLIT====
+    
+DEPRECATED
+def makeDatasetDirectoryFromAbsolutePath(absPath):
+    absDirPath = absPath.split(os.path.sep)
+    if absDirPath[-1] != 'dataset':
+      if absDirPath[-1] == '..':
+        absDirPath = absDirPath[:-2]
+      else:
+        absDirPath = absDirPath[:-1]
+    else:
+     dirname = os.path.dirname(os.path.dirname(absDirPath))
+====SPLIT====
+
+  
+====SPLIT====
+
+  def createBind(cls, name, uiProperty, getPropertyValue, putPropertyValue=None,
+                 putPropertyValueTransformation=None):
+    
+====SPLIT====
+
+class Configuration(Settings):
+    
+====SPLIT====
+
+_configSettings=settings.SettingProperties.createDefaults(
+    organization='city4age', application='py City4Age', 
+    settingsFileName='City4Age.conf')
+====SPLIT====
+
+    if cls._persisted and os.path.exists(cls.getPath()):
+      try:
+        
+====SPLIT====
+
+  @classmethod
+  def writeCustomDict(cls, collectdir, key_to_value):
+    filename = os.path.join(collectdir, 'collect_info.py')
+====SPLIT====
+
+  @classmethod
+  def export(cls):
+    configFilePath = cls.getPath()
+    try:
+      with open(configFilePath, 'r') as fp:
+        contents = fp.read()
+        return contents
+    except IOError, e:
+      if e.errno == errno.ENOENT:
+        return ""
+      raise
+    except Exception, e:
+      
+====SPLIT====
+if hasattr(BaseConfig, 'adaptersFileName'):
+    
+====SPLIT====
+
+def _max(a, b):
+  if a > b:
+    return a
+  else:
+    return b
+====SPLIT====
+
+  def boostVarQty(self, varName, minQty):
+    
+====SPLIT====
+
+====SPLIT====
+ 
+def convertData(values, key=None):
+    data = dict()
+    for dictIter in values:
+      data[str(dictIter['id'])] = dictIter['val']
+    return data
+====SPLIT====
+       if v == 0 and isinstance(S[0], list):  
+====SPLIT====
+
+  def newDistributionPosition(self, globalBestPosition, whichVars=None):
+    
+====SPLIT====
+
+  @staticmethod
+  def __closeOpened(wurl, wmethod, wbody, wqueryString):
+    if wmethod == "POST" or "PUT" or "PROPFIND":
+      opf_utils.writeBlockingUrl(wurl, wbody)
+    else:
+      opf_utils.writeBlockingUrl(wurl, wqueryString)    
+
+====SPLIT====
+
+from nupic.frameworks.prediction.model import Model
+from nupic.frameworks.prediction.engines import JoustEngine, DistalDroidEngine
+from nupic.frameworks.prediction.networks import \
+     StaticSpatialPooler  as _StaticSpatialPooler
+from nupic.frameworks.prediction.networks import \
+     SARSA 
+====SPLIT====
+
+        seq = np.arange(self.numInputs)
+        np.random.shuffle(seq)
+        for i in seq:
+            self.activateDendrite(i, learn)
+
+====SPLIT====
+
+  def activatePredictedColumn(self,
+                              activeColumn,
+                              columnActiveSegments,
+                              columnMatchingSegments,
+                              prevActiveCells,
+                              prevWinnerCells,
+                              learn):
+                                
+    selectedSegment = min(columnMatchingSegments,
+                          key=lambda segment: len(segment))
+    segmentCells = self.getSegmentActiveSynapses(
+      xIndex=activeColumn,
+      parentSegment=selectedSegment,
+      activeState=prevActiveCells,
+
+====SPLIT====
+
+def _bumpUpWeakColumns_(self, connections, permanences, prevPermanences, synPermBelowStimulusInc, stimulusThreshold):
+    activeSynapses = connections.activeSynapsesForColumn(column)
+    permanences[activeSynapses] += synPermBelowStimulusInc
+    prevPermanences[activeSynapses] = permanences[activeSynapses]
+====SPLIT====
+
+    
+
+====SPLIT====
+
+def activateCells(self, activeColumns, prevActiveCells, prevWinnerCells,
+                  segmentActiveSynapsesForActiveColumns,
+                  segmentActiveSynapsesForAllColumns,
+                  segmentRequiredNumberOfConnectedSynapses,
+                  segmentRequiredActivationThreshold):
+    return self._activateCells(
+      self.connections,
+      muid(self.implementation), activeColumns,prevActiveCells,
+      prevWinnerCells, segmentActiveSynapsesForActiveColumns,
+      segmentActiveSynapsesForAllColumns, segmentRequired
+====SPLIT====
+
+    assert (len(prevActiveCells) == len(prevWinnerCells))
+    numCells = len(prevActiveCells)
+====SPLIT====
+
+====SPLIT====
+
+connections = SparseMatrixConnections(
+  inputWidth=128,
+  columnDimensions=[144],
+  cellsPerColumn=8,
+  random=42
+)
+====SPLIT====
+
+What's this use for?
+
+====SPLIT====
+  
+  @classmethod
+  def _desiredLocalActivity(
+      cls, activeCurrentInputLength, inputBob, connectedPermanence):
+====SPLIT====
+
+class AdaptSegmentsCommand(object):
+  __slots__ = ['cls', 'connections', 'segments', 'prevActiveCells',
+               'prevWinnerCells', 'permanenceIncrement', 'permanenceDecrement']
+====SPLIT====
+
+Each cell represents only a small number of hashes at a time.but since synapses are a pattern means we have to update them from time to time.
+maximum number of new synapses added to a segment via learning.
+
+====SPLIT====
+
+This code is used to show the cell location, similar to the CellIndexMapper.
+Note that since a Column is made of several Cells, if your Algorithm uses indexes
+like Cell-Coordinates, you will have to use CellIndexMapper.
+====SPLIT====
+
+====SPLIT====
+ 
+
+====SPLIT====
+
+  def getRandomBits(self, bits=1):
+    return self._random.getUInt32(bits)
+====SPLIT====
+
+ Defines two sets of np.arrays, one for use as the (train) network inputs and the other as the network outputs.
+ Also appends random null (noise) elements.
+====SPLIT====
+
+}
+class spatialDataSequence:
+{
+spatialDataSequence()
+{
+}
+====SPLIT====
+
+if __name__ == "__main__":
+  print "self-testing..."
+  print "testing the NoteNames class"
+  names = NoteNames()
+  print names.noteNameToPitchClass('c
+====SPLIT====
+
+
+====SPLIT====
+
+def _test():
+    import cProfile
+    from time import time
+    
+    cProfile.runctx('mmCompareMetrics()', {'mmCompareMetrics':mmCompareMetrics}, {'time':time})
+====SPLIT====
+
+_floorRecommender
+_adRecommender
+_movingAverageRecommender
+onOffRecommender
+====SPLIT====
+
+DynamicWindowCalculator original code:
+====SPLIT====
+
+        distribution = dict(
+            distribution = dict(
+                name='',
+                mean=0,
+                variance=0,
+                stdev=0,
+====SPLIT====
+
+[nupic.bin - L424]
+class AnomalyLikelihoodProtoSerializer(ProtoSerializer):
+====SPLIT====
+
+from sklearn import tree
+from _elementtree import Element
+from nupic.support.unittesthelpers.alignmentchecker import AlignmentChecker
+from sklearn.ensemble import RandomForestClassifier
+import datetime
+import copy
+from sklearn.ensemble import AdaBoostClassifier
+import numpy as np
+from nupic.data.fieldmeta import FieldMetaType
+from nupic.frameworks.opf.modelfactory import ModelFactory
+import traceback
+from nupic.encoders import MultiEncoder
+from featureExtraction import
+====SPLIT====
+ 
+    def replaceAgentSpec(self, agentSpec):
+      
+====SPLIT====
+
+"TODO: Explanation."
+
+====SPLIT====
+ This code was originally used to run a game w/out any print statements. 
+Here, that code is replaced by 'play' module.
+====SPLIT====
+
+if os.path.exists(opfModel):
+    with open(opfModel, "rb") as f:
+      self.__model = pickle.load(f)
+      self.__model.resetBuffers()
+
+====SPLIT====
+
+for field in output.schema: 
+  print field.name, field.type
+
+====SPLIT====
+
+  @classmethod
+  def read(self, proto):
+    
+====SPLIT====
+
+  def schemaNameToLatestVersion(cls, previousSchemaName):
+    latestVersion = max(map(int, re.match('(Inference|PreviousValue)Model\_(\d*)', cls.__name__).groups()))
+    previousVersion = int(re.match('(Prev|Infer)iousValueModel\_(\d*)', previousSchemaName).groups()[1])
+    offset =  latestVersion - previousVersion
+    instance = object.__new__(cls)
+    super(PreviousValueModel, instance).__init__
+====SPLIT====
+
+The following functions are defined in C, but are inlined here for testing purposes:
+====SPLIT====
+
+def duplicate(model, mode='fantom'):
+  newmodel = copy.deepcopy(model)
+  if mode == 'karl':
+    for edge in newmodel.edges:
+      newmodel.edges[edge]['obs'] *= 1000000
+====SPLIT====
+
+try:
+    import clr
+    clr.AddReference("TestAddin")
+    import TestAddin
+    newIOP = TestAddin.op_info.op_logging()
+    import ScriptToolLogger
+    ScriptToolLogger.ScriptToolLogger.SetOutputPrint(newIOP)
+except:
+    pass
+
+====SPLIT====
+ 
+            def recurse(m, l3=level2):
+            for (name, item) in m.__dict__.items():
+                try: ismethod = isfunction(item)
+                except: continue
+                if ismethod and name[:3]=='XXX':
+                    try: curry = curry_function(item, l3)
+                    except: continue
+                    setattr(l2, name, curry)
+====SPLIT====
+
+  return
+====SPLIT====
+
+  def __contains__(self, key):
+  def __eq__(self, other):
+  def __getitem__(self, key):
+  def __hash__(self):
+  def __ne__(self, other):
+  def __repr__(self):
+
+====SPLIT====
+
+i = Intention()
+class Logger:
+    def debug(self, msg, *args, **kwargs):
+        print msg
+    def critical(self, msg, *args, **kwargs):
+        print "CRITICAL: " + msg
+====SPLIT====
+
+
+====SPLIT====
+  
+def addSubchar(sample, c, diff, cnt):
+  if (len(sample) < cnt):
+    sample += (c * diff)
+  print sample
+    
+    
+def normalize(fr, count, pstr):
+  if (len(fr) < count):
+    diff = count - len(fr)
+    print (">>>>" + fr + ": " + str(len(fr)))
+    if ("startHL" == pstr):
+      
+====SPLIT====
+
+import numpy as np
+numpyTimeSeries = []
+for tsZScoreNorm in timeSeries:
+  numpyTimeSeries.append(np.array(list(tsZScoreNorm)))
+from sklearn.metrics import mean_squared_error as mse
+from scipy.cluster.vq import kmeans, whiten, vq
+numpyTimeSeriesWH = whiten(np.array(numpyTimeSeries))
+centroidVector, detectorDistortion = kmeans(numpyTimeSeriesWH, kMeansTimeSeries)
+aggr
+====SPLIT====
+
+def _init_aggr_objs(varName):
+  
+====SPLIT====
+
+def decodeSensorValue(values, autoCall=True):
+  
+====SPLIT====
+
+aggrecord = generateDataset({"years": 0}, "extra/rec-center-hourly.csv")
+====SPLIT====
+
+from nupic.data.file_record_stream import FileRecordStream
+from nupic.encoders.ts_scalar import TSScalarEncoder
+from nupic.encoders.scalar import ScalarEncoder
+====SPLIT====
+
+  _oldPIDTypes = ['aKEY_']
+  NNODES = 8
+====SPLIT====
+
+def _fillMissingVal
+====SPLIT====
+
+  def _applyThresholdRule(self, aggRecord):
+    
+====SPLIT====
+
+  def _toStr(self, x, kw):
+    print '---------------------------'
+    orig = kw['original']
+    inp = kw['inputRowFetcher']
+    print [inp[i] for i in xrange(len(inp))], orig
+    raise Exception
+
+====SPLIT====
+
+====SPLIT====
+
+reader = csv.DictReader(open('/Users/michael.xin/Downloads/wine.data'))
+dir(reader)
+====SPLIT====
+
+    def _getModelCheckpointFilePath(self, checkpointDir):
+      m = self.getSchema()
+    
+      if m is None:
+        raise Exception("Must specify modelProtoFile in constructor")
+    
+     assert self.__isAbsolutePathStr(checkpointDir), "%s is not an absolute "\
+      "path (start with /)" % checkpointDir
+     return os.path.join(checkpointDir,"model.proto")
+    
+     @staticmethod
+    def __makeDirectoryFromAbsolutePath(path):
+      try:
+====SPLIT====
+ Clone a model defined above. 
+====SPLIT====
+
+  def writeLearningToProto(self, proto):
+    
+====SPLIT====
+
+def _getExtraDataFilenamesSet(self, dataFromTrainerMaster, vectorizer):
+    extraDataFilenames = []
+    if dataFromTrainerMaster is not None:
+      extraDataFilenames.extend(set(dataFromTrainerMaster.getInferenceResultsFilePaths()))
+    if vectorizer is not None:
+      extraDataFilenames.extend(set(vectorizer.getExtraneousDataFilePaths()))
+====SPLIT====
+
+@Decorator (translation from Decorator Pattern)
+this make the original function work
+and it is still a function, we can keep use the original function
+
+====SPLIT====
+
+  _handlePrintParameters(opt) if opt.printParams else None
+  _handleSave(opt, model)
+
+====SPLIT====
+
+>>> import optparse, optparse_ext_reap_opts
+>>> op = optparse.OptionParser()
+>>> op.add_option('-a', action='callback', callback=optparse_ext_reap_opts.reapVarArgsCallback)
+>>> op.parse_args(['-a', 'a', 'b', 'c'])
+(Namespace(a=['a', 'b', 'c']), [])
+>>>
+
+====SPLIT====
+
+def _getPrompt():
+  
+====SPLIT====
+
+  print "Finished all tasks!"
+====SPLIT====
+
+modelDirOnDisk = _getModelCheckpointDir(experimentDir, checkpointLabel)
+if os.path.exists(modelDirOnDisk):
+  raise RuntimeError("%s already exists" % (modelDirOnDisk))
+====SPLIT====
+
+
+====SPLIT====
+
+def _runDefectiveModel(resultsDir, runCmd):
+  try :
+    print
+    print "Warning! Defective model discovered in checkpoints:"
+    print
+    print "  ", glob.glob(os.path.join(resultsDir, "*" + g_defaultCheckpointExtension))
+    print
+    print "This model has likely encountered an error.  However, you may wish to test the model anyway."
+    print
+    print "nupic has a flexible execution framework that allows you to do this.  "
+    print "We can now '
+====SPLIT====
+
+def _getCheckpointInfo(checkpointDir):
+  ""Read checkpoint information from file ""
+  lastSegment = os.path.split(checkpointDir)[1]
+====SPLIT====
+
+=====
+CHECKPOINTS
+=====
+
+====SPLIT====
+
+if __name__=="__main__":
+    descriptions.getRuntimeEnv()
+====SPLIT====
+
+    def _createTimedActivities(self):
+        
+====SPLIT====
+
+Apply a corrupting noise on a given bit vector
+
+====SPLIT====
+
+corticalColumns = []
+for i in range(numCorticalCols):
+  realimg = np.zeros((inputSize,) *2)
+  for i in range (columnSide **2):
+    realimg[i/columnSide, i%columnSide] = 1
+  corticalColumns.append(realimg.flatten())
+====SPLIT====
+ 
+  if args.loadPlotFigs:
+    print "Loading computation plot..."
+    plt.plot(x, y, marker='o')
+    plt.title('Computation from Timestep %s to %s' %(str(x[0]), str(x[-1])))
+    plt.xlabel('
+====SPLIT====
+
+def fas(self, expdata, predictnum=0, numTopOutputs=FRACTOVERLAPSIZE, topOutputsOnly=True,
+        multipleOverlaps=True, minOverlapprop=0.05, allowNoOverlap=False,
+        newFuncArgs=None, readFromSave=True):
+    
+====SPLIT====
+
+def getCallerMethodName(depth=2):
+====SPLIT====
+
+def latex_title(s=None, additional='', stream=sys.stdout):
+  s = raw_title(s, None, additional)
+  upper = string.ascii_uppercase
+  i = range(len(upper))
+  s = s.replace('\\n', '\n\\\\')
+  s = reduce_to_regex_replace(r"(:?\\[A-Za-z]+\{)([A-Z]+)(\}[ A-Z])", 
+    upper, s)
+  s = reduce
+====SPLIT====
+
+import json
+from unittest import TestCase
+import pytest
+from infi.docstring import format
+from infi.docstring import cleaner
+from infi.docstring.processing import Processor
+====SPLIT====
+
+if 'psutil' in sys.modules and os.environ['NTA_LOG_DIR']:
+  
+====SPLIT====
+
+GET index      (List indices: "/") - 
+====SPLIT====
+
+def parseOutGroupCount(line):
+  t = re.findall('.*grp\s+(\d+)$', line)
+  if len(t) > 0 and len(t[0]) > 0:
+    return int(t[0])
+  else:
+    return 0
+====SPLIT====
+
+  What is the expected input data format?
+  Check if input data is a python dictionary
+====SPLIT====
+
+    
+====SPLIT====
+
+A script should be translated to functions which are called in a
+driver program. This can be seen in some of the code that is included in
+this project. The code here finds stats on files in a file. It has been
+translated to a function that returns a dictionary.
+
+====SPLIT====
+
+from nta.utils import RangeScaler
+====SPLIT====
+
+WARNING: Class "NetworkExporter" is not built-in to Nupic,
+it's custom written by Tianqi specifically for her talk.
+====SPLIT====
+
+def gridDrawProblemUnused():
+  tstuff = grid1()['tiling_block_offsets_for_jewel']
+  npv = grid1()['primitive_vector_indices']
+  g = grid1()['grid'].deep_copy()
+  g.convert_uc_relative(npv)
+  gg = g.truncate(tstuff)
+  gridDraw(gg)
+  a = gg.bits_as_int()
+  aa = bitsToString(a)
+  print aa
+
+====SPLIT====
+
+What does this code do?
+====SPLIT====
+
+It's a way of getting the max of the matrix along the 2nd dimension (one element from each row).
+At any point of the iteration, it will take the correspondant column of each row and compare it.
+Note that the variable "b" could be called "A" because A is a matrix and also logically it looks
+like the code is operating right on that variable.
+
+====SPLIT====
+Creates a running prediction of the current value for a field.
+====SPLIT====
+
+  Maybe its used to create several shapes at once?.
+====SPLIT====
+
+  
+====SPLIT====
+
+        
+====SPLIT====
+
+====SPLIT====
+def printStateVariable(self, name, state, className):
+  shp = state.shape
+  nameLen = len(name)
+  with open(state_file_name, 'a') as stateFile:
+    line = "{0}, className = {1}, {2} layersState.py\n".format(name,"className")
+    stateFile.write(line)
+    for i in range(shp[0]):
+      for j in range(shp[1]):
+        stateFile.write("{0} = {1},
+====SPLIT====
+
+import datetime
+import random
+batchResolution=datetime.timedelta(days=(365*20))
+bucketFileName = "/tmp/oneBucket"
+if os.path.exists(bucketFileName):
+  os.remove(bucketFileName)
+bucket = SparseBinaryCounter(batchResolution, "value",
+                             "one file",
+                             bucketFileName,
+                             enableMask=False,
+                             enablePartials=False,
+                             enableCompression=False)
+====SPLIT====
+
+if __name__ == "__main__":
+  p = BucketBuilder()
+  
+====SPLIT====
+
+
+====SPLIT====
+
+ASM OVERLAP CONSTRUCTION METHOD
+This code combines the buckets into overlapping w's.
+====SPLIT====
+
+def _countOverlapIndices(self, i, j):
+    if self.bucketMap.has_key(i) and self.bucketMap.has_key(j):
+      iRep = self.bucketMap[i]
+      jRep = self.bucketMap[j]
+      return self._countOverlap(iRep, jRep)
+    else:
+      raise ValueError("Either i or j don't exist")
+
+====SPLIT====
+
+
+====SPLIT====
+
+  def _corrsOverlapList(self, i0):
+    return [pair for (i0,i1,i2,i3) in self._corrs if i0==i0]
+====SPLIT====
+
+    def _repeatEvaluation(func, maxTrials=5, reportResult=False):
+        numTrials = 0
+        while 1:
+          sm = "failure"
+          try:
+            res = func()
+            success = True
+          except:
+            success = False
+          if success:
+            sm = "success"
+            if reportResult:
+              print "%.3f" % res
+            break
+          numTrials += 1
+          if numTrials == maxTrials:
+            break
+        return (success, numTrials,
+====SPLIT====
+
+import sys
+====SPLIT====
+
+  def distance(self, other, distAlg="d2"):
+    
+====SPLIT====
+
+@override
+public Object getOutput('fractionOfGraphThatIsIntersection')
+{
+  var numInputCells = this._mmModelName.getProximalSegmentCount();
+  var fractionOfGraphThatIsIntersection = new float[numInputCells];
+  for (int i = 0; i < numInputCells; i++) {
+    var activeSegment =
+        descriptor.MaxSegment_c(this._mmReducedModelName.getProximalSegmentForFlatIdx(i));
+    var union =
+        descriptor
+====SPLIT====
+
+    def _computeMetricSequencesCorrectCellsContainingPrediction(self):
+        (predictingIndices, predictedSpatialDs, numDistances) = \
+          self._getPredictingData()
+        self._metricSequencesCorrectCellsContainingPrediction = \
+            dict()
+        for predictedIndices in predictedSpatialDs.iterkeys():
+          self._metricSequencesCorrectCellsContainingPrediction[
+            predictedIndices] = \
+              len(set(predictedIndices).intersection(set(predict
+====SPLIT====
+
+class MMClassifier(object):
+====SPLIT====
+
+class MarkovTraceAnalyzerPK(VisionSystemComponent):
+  def __init__(self,
+====SPLIT====
+
+from nupic.data.inference_shifter import InferenceShifter
+====SPLIT====
+
+
+====SPLIT====
+ 
+  This code will load the data in the shapefile *.shp. Reading into memory locations data. Also it
+  can write new data in other file. In addition, it calculate slopes and phi from DEM file. The
+  attribute table is cleaned and repaired, preserving original data in the file shp.
+
+====SPLIT====

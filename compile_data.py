@@ -45,14 +45,23 @@ def get_trelent_result(data_entry):
         json=body
     )
 
-    docstr = response.json()["data"]["docstring"]
-    # Remove docstring pre/suffix and the :return: line and below
-    docstr = docstr.replace("r\"\"\"", "").replace("\"\"\"", "")
-    idx = docstr.find(":return:")
-    if idx != -1:
-        docstr = docstr[:idx]
+    docstr = None
+    json_data = response.json()
+    if(json_data != None):
+        data = json_data.get("data")
+        if(data != None):
+            docstr = data.get("docstring")
 
-    return docstr.strip()
+    # Remove docstring pre/suffix and the :return: line and below
+    if(docstr != None):
+        docstr = docstr.replace("r\"\"\"", "").replace("\"\"\"", "")
+        idx = docstr.find(":return:")
+        if idx != -1:
+            docstr = docstr[:idx]
+
+        return docstr.strip()
+    else:
+        return None
 
 dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
 
@@ -60,20 +69,29 @@ validation_set = dataset["validation"]
 trelent_results = ""
 codex_results = ""
 references = ""
-i = 1
-while(i < 10):
+
+def update_results():
+    with open("data/codex.txt", "a") as f:
+        f.write(codex_results)
+
+    with open("data/trelent.txt", "a") as f:
+        f.write(trelent_results)
+
+    with open("data/references.txt", "a") as f:
+        f.write(references)
+
+i = 150
+while(i < 1000):
     data_entry = validation_set[i]
-    trelent_results += get_trelent_result(data_entry) + "\n====SPLIT====\n"
+    trelent_result = get_trelent_result(data_entry)
+    if(trelent_result != None):
+        trelent_results += trelent_result + "\n====SPLIT====\n"
     codex_results += get_codex_completion(data_entry) + "\n====SPLIT====\n"
     references += data_entry["docstring"] + "\n====SPLIT====\n"
     print("iter", i)
+    if(i % 10 == 0):
+        update_results()
+        codex_results = ""
+        trelent_results = ""
+        references = ""
     i+=1
-
-with open("data/codex.txt", "a") as f:
-    f.write(codex_results)
-
-with open("data/trelent.txt", "a") as f:
-    f.write(trelent_results)
-
-with open("data/references.txt", "a") as f:
-    f.write(references)
